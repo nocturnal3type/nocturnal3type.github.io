@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>nocturnal3type</title>
+  <title>초밥이의 덕질공간</title>
   <style>
     body {
       background-color: #000;
@@ -12,10 +12,51 @@
       color: #fff;
     }
 
+    .mini-windows-container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 30px auto 10px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .mini-window {
+      flex: 1;
+      border: 2px solid #999;
+      background-color: #c0c0c0;
+      box-shadow: 2px 2px 5px #333;
+    }
+
+    .mini-title-bar {
+      background-color: navy;
+      color: white;
+      padding: 5px 10px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .mini-content {
+      padding: 10px;
+      color: black;
+    }
+
+    .mini-button {
+      padding: 5px 10px;
+      background-color: #e0e0e0;
+      border: 2px outset #999;
+      cursor: pointer;
+    }
+
+    .mini-button:hover {
+      background-color: #d0d0d0;
+    }
+
     .window {
       width: 90%;
       max-width: 1000px;
-      margin: 40px auto;
+      margin: 10px auto 40px;
       border: 2px solid #999;
       background-color: #c0c0c0;
       box-shadow: 0 0 10px #444;
@@ -99,6 +140,23 @@
 </head>
 <body>
 
+  <!-- 작은 창들 -->
+  <div class="mini-windows-container">
+    <div class="mini-window">
+      <div class="mini-title-bar">오억년버튼</div>
+      <div class="mini-content">
+        <button class="mini-button">누르기</button>
+      </div>
+    </div>
+    <div class="mini-window">
+      <div class="mini-title-bar">초밥이에게 초밥을 먹여주기</div>
+      <div class="mini-content">
+        <button class="mini-button">🍣 줘보기</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 메인 캐릭터 창 -->
   <div class="window">
     <div class="title-bar">
       <div class="close-button"></div>
@@ -156,18 +214,33 @@
     ];
 
     const originalHTML = document.getElementById('info-panel').innerHTML;
+    let easterEggTriggered = false;
 
     function showCharacterInfo(index) {
       const panel = document.getElementById('info-panel');
+      if (index === 4) easterEggTriggered = false;
+
       panel.innerHTML = `
         <h2>캐릭터 설명</h2>
         <p>${characterInfos[index]}</p>
-        <button class="back-button" onclick="goBack()">← 돌아가기</button>
+        <button class="back-button" onclick="goBack(${index})">← 돌아가기</button>
       `;
     }
 
-    function goBack() {
-      document.getElementById('info-panel').innerHTML = originalHTML;
+    function goBack(index = null) {
+      const panel = document.getElementById('info-panel');
+
+      if (index === 4 && !easterEggTriggered) {
+        easterEggTriggered = true;
+        panel.innerHTML = `
+          <h2>🎉 이스터에그 발견!</h2>
+          <p>축하합니다! <strong>캐릭터 5</strong>의 돌아가기 버튼을 눌러 이스터에그를 발견하셨어요!</p>
+          <p>한 번 더 누르면 진짜 돌아갑니다 :)</p>
+          <button class="back-button" onclick="goBack(4)">← 돌아가기</button>
+        `;
+      } else {
+        panel.innerHTML = originalHTML;
+      }
     }
   </script>
 
