@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
     infoPanel.innerHTML = `
       <h2>초밥이</h2>
       <p>안녕하세요? 왜 안녕하신가요? 부럽습니다.</p>
-      <p>이쪽은 제 여자친구들입니다. 캐릭터 누르면 설명 뜹니다. 아니? 캐릭터 아닙니다. 엄연한 제 가족들입니다.</p>
+      <p>이쪽은... 캐릭터 누르면 설명 뜹니다. 하하하하.</p>
     `;
 
     const windowTitle = document.querySelector(".window .title-bar");
