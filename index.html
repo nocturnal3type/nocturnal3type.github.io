@@ -1,40 +1,134 @@
 <!DOCTYPE html>
-<html>
-	<body>
-    		<div>
-        안녕하세요? 저는 안녕 못 합니다. 왜 안녕하세요?
-    		</div>
-    
-    		<main>
-        		<div>5억년버튼</div>
-        		<button>
-            			누르기
-        		</button>
-    		</main>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>초밥이의 덕질공간</title>
+  <style>
+    body {
+      background-color: #000;
+      margin: 0;
+      font-family: 'Courier New', Courier, monospace;
+      color: #fff;
+    }
 
-    		<footer>
-        		<div>ㄳ합니다</div>
-    		</footer>
+    .window {
+      width: 90%;
+      max-width: 1000px;
+      margin: 40px auto;
+      border: 2px solid #999;
+      background-color: #c0c0c0;
+      box-shadow: 0 0 10px #444;
+    }
 
-		<div id="disqus_thread"></div>
-		
-		<script>
-		    /**
-		    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-		    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-		    /*
-		    var disqus_config = function () {
-		    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-		    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-		    };
-		    */
-		    (function() { // DON'T EDIT BELOW THIS LINE
-		    var d = document, s = d.createElement('script');
-		    s.src = 'https://nocturnal-2.disqus.com/embed.js';
-		    s.setAttribute('data-timestamp', +new Date());
-		    (d.head || d.body).appendChild(s);
-		    })();
-		</script>
-		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-	</body>
+    .title-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: navy;
+      color: white;
+      padding: 6px 10px;
+      font-weight: bold;
+    }
+
+    .close-button {
+      width: 16px;
+      height: 16px;
+      background-color: red;
+      border: 2px outset #fff;
+      cursor: pointer;
+    }
+
+    .content {
+      display: flex;
+      padding: 10px;
+    }
+
+    .left-panel {
+      flex: 4;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+      padding-right: 10px;
+    }
+
+    .right-panel {
+      flex: 6;
+      background-color: #fff;
+      color: #000;
+      padding: 10px;
+      border: 2px inset #999;
+      min-height: 300px;
+    }
+
+    .character {
+      background-color: white;
+      border: 2px inset #999;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+    .character img {
+      width: 100%;
+      display: block;
+    }
+
+    .character:hover {
+      outline: 2px solid navy;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="window">
+    <div class="title-bar">
+      <div class="close-button"></div>
+      <div>초밥이</div>
+    </div>
+    <div class="content">
+      <div class="left-panel">
+        <div class="character" onclick="showCharacterInfo(0)">
+          <img src="char1.jpg" alt="캐릭터 1" />
+        </div>
+        <div class="character" onclick="showCharacterInfo(1)">
+          <img src="char2.jpg" alt="캐릭터 2" />
+        </div>
+        <div class="character" onclick="showCharacterInfo(2)">
+          <img src="char3.jpg" alt="캐릭터 3" />
+        </div>
+        <div class="character" onclick="showCharacterInfo(3)">
+          <img src="char4.jpg" alt="캐릭터 4" />
+        </div>
+        <div class="character" onclick="showCharacterInfo(4)">
+          <img src="char5.jpg" alt="캐릭터 5" />
+        </div>
+        <div class="character" onclick="showCharacterInfo(5)">
+          <img src="char6.jpg" alt="캐릭터 6" />
+        </div>
+      </div>
+      <div class="right-panel" id="info-panel">
+        <h2>초밥이의 소개</h2>
+        <p>안녕하세요! 저는 만화와 게임을 좋아하는 '초밥이'입니다.</p>
+        <p>왼쪽 캐릭터를 클릭하면 각 캐릭터에 대한 설명이 여기에 뜰 거예요!</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const characterInfos = [
+      "캐릭터 1: 귀엽고 용감한 주인공!",
+      "캐릭터 2: 츤데레지만 마음씨는 따뜻해요.",
+      "캐릭터 3: 전투 능력 최고, 조용한 타입.",
+      "캐릭터 4: 활발한 마스코트 캐릭터!",
+      "캐릭터 5: 다크 히어로 느낌의 매력.",
+      "캐릭터 6: 모두를 돌보는 언니 같은 존재."
+    ];
+
+    function showCharacterInfo(index) {
+      const panel = document.getElementById('info-panel');
+      panel.innerHTML = `<h2>캐릭터 설명</h2><p>${characterInfos[index]}</p>`;
+    }
+  </script>
+
+</body>
 </html>
