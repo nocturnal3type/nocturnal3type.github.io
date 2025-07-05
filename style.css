@@ -1,1 +1,173 @@
+/* 마우스 커서: Windows 95 느낌 */
+body {
+  background-color: #000;
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  cursor: url('https://cur.cursors-4u.net/cursors/cur-2/cur117.cur'), auto;
+}
 
+/* 전체 정렬을 위한 래퍼 */
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* 미니 윈도우 창들 (상단) */
+.mini-windows {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.mini-window {
+  width: 240px;
+  background-color: #c0c0c0;
+  border: 2px solid #999;
+  box-shadow: 2px 2px 4px #333;
+  user-select: none;
+}
+
+.mini-title-bar {
+  background-color: navy;
+  color: white;
+  padding: 6px 10px;
+  font-weight: bold;
+}
+
+.mini-content {
+  padding: 10px;
+  color: black;
+}
+
+.mini-button {
+  padding: 6px 12px;
+  border: 2px outset #999;
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
+
+.mini-button:hover {
+  background-color: #d0d0d0;
+}
+
+/* 윈도우 창 스타일 (공통) */
+.window {
+  background-color: #c0c0c0;
+  border: 2px solid #999;
+  box-shadow: 2px 2px 6px #444;
+  user-select: none;
+}
+
+/* 타이틀 바 (드래그 가능) */
+.title-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: navy;
+  color: white;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: move;
+}
+
+.window-title {
+  flex: 1;
+}
+
+.window-buttons img {
+  width: 14px;
+  height: 14px;
+  margin-left: 4px;
+  background-color: white;
+  border: 1px solid black;
+}
+
+/* 캐릭터 + 설명 부분 */
+.content {
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+}
+
+/* 왼쪽: 캐릭터 9개 */
+.left-panel {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.character {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: white;
+  border: 2px inset #999;
+  cursor: pointer;
+}
+
+.character img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.character:hover {
+  outline: 2px solid navy;
+}
+
+/* 오른쪽: 소개 영역 */
+.right-panel {
+  flex: 1;
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border: 2px inset #999;
+  min-height: 280px;
+  font-size: 14px;
+}
+
+/* 메모장, 음악창도 공통 스타일 사용 */
+.note-content, .music-content {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* LP 스타일 */
+.lp {
+  width: 80px;
+  margin-top: 10px;
+}
+
+/* 돌아가기 버튼 */
+.back-button {
+  margin-top: 15px;
+  padding: 6px 12px;
+  background-color: #c0c0c0;
+  border: 2px outset #999;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #a0a0a0;
+}
+
+/* 무지개 색 목록 (JS에서 적용할 색들) */
+:root {
+  --rainbow-0: red;
+  --rainbow-1: orange;
+  --rainbow-2: gold;
+  --rainbow-3: green;
+  --rainbow-4: blue;
+  --rainbow-5: indigo;
+  --rainbow-6: violet;
+  --rainbow-7: pink;
+  --rainbow-8: cyan;
+}
