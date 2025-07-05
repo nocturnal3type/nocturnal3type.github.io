@@ -171,3 +171,32 @@ body {
   --rainbow-7: pink;
   --rainbow-8: cyan;
 }
+
+
+/* 고정 최소 크기 보장 */
+.window {
+  min-width: 700px;
+  max-width: 100%;
+}
+
+/* 캐릭터/설명 칸 너비 비율 정비 */
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* 왼쪽: 캐릭터 이미지 */
+.left-panel {
+  flex: 1 1 45%;
+  min-width: 300px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/* 오른쪽: 소개 */
+.right-panel {
+  flex: 1 1 55%;
+  min-width: 300px;
+}
