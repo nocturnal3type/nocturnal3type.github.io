@@ -1,13 +1,15 @@
-/* 마우스 커서: Windows 95 느낌 */
+/* ------------------------------
+   ✅ 전체 스타일 (style.css)
+------------------------------ */
+
 body {
-  background-color: #000;
+  background-color: black;
   margin: 0;
   font-family: 'Courier New', Courier, monospace;
   color: white;
   cursor: url('https://cur.cursors-4u.net/cursors/cur-2/cur117.cur'), auto;
 }
 
-/* 전체 정렬을 위한 래퍼 */
 .container {
   width: 90%;
   max-width: 1000px;
@@ -17,7 +19,9 @@ body {
   gap: 15px;
 }
 
-/* 미니 윈도우 창들 (상단) */
+/* ------------------------------
+   🎛️ 상단 더미 버튼 창
+------------------------------ */
 .mini-windows {
   display: flex;
   gap: 10px;
@@ -30,6 +34,7 @@ body {
   border: 2px solid #999;
   box-shadow: 2px 2px 4px #333;
   user-select: none;
+  position: relative;
 }
 
 .mini-title-bar {
@@ -37,6 +42,7 @@ body {
   color: white;
   padding: 6px 10px;
   font-weight: bold;
+  cursor: move;
 }
 
 .mini-content {
@@ -55,15 +61,20 @@ body {
   background-color: #d0d0d0;
 }
 
-/* 윈도우 창 스타일 (공통) */
+/* ------------------------------
+   📦 메인 창 스타일
+------------------------------ */
 .window {
   background-color: #c0c0c0;
   border: 2px solid #999;
   box-shadow: 2px 2px 6px #444;
   user-select: none;
+  position: relative;
+  width: 100%;
+  min-width: 700px;
+  max-width: 100%;
 }
 
-/* 타이틀 바 (드래그 가능) */
 .title-bar {
   display: flex;
   justify-content: space-between;
@@ -87,19 +98,19 @@ body {
   border: 1px solid black;
 }
 
-/* 캐릭터 + 설명 부분 */
 .content {
   display: flex;
   padding: 10px;
   gap: 10px;
 }
 
-/* 왼쪽: 캐릭터 9개 */
+/* 좌측 캐릭터 */
 .left-panel {
-  flex: 1;
+  width: 330px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 6px;
+  align-content: flex-start;
 }
 
 .character {
@@ -108,6 +119,9 @@ body {
   background-color: white;
   border: 2px inset #999;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .character img {
@@ -120,7 +134,7 @@ body {
   outline: 2px solid navy;
 }
 
-/* 오른쪽: 소개 영역 */
+/* 우측 설명창 */
 .right-panel {
   flex: 1;
   background-color: white;
@@ -131,7 +145,7 @@ body {
   font-size: 14px;
 }
 
-/* 메모장, 음악창도 공통 스타일 사용 */
+/* 메모장 & 음악창 */
 .note-content, .music-content {
   background-color: white;
   color: black;
@@ -139,13 +153,11 @@ body {
   font-size: 14px;
 }
 
-/* LP 스타일 */
 .lp {
   width: 80px;
   margin-top: 10px;
 }
 
-/* 돌아가기 버튼 */
 .back-button {
   margin-top: 15px;
   padding: 6px 12px;
@@ -159,7 +171,6 @@ body {
   background-color: #a0a0a0;
 }
 
-/* 무지개 색 목록 (JS에서 적용할 색들) */
 :root {
   --rainbow-0: red;
   --rainbow-1: orange;
@@ -170,33 +181,4 @@ body {
   --rainbow-6: violet;
   --rainbow-7: pink;
   --rainbow-8: cyan;
-}
-
-
-/* 고정 최소 크기 보장 */
-.window {
-  min-width: 700px;
-  max-width: 100%;
-}
-
-/* 캐릭터/설명 칸 너비 비율 정비 */
-.content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-/* 왼쪽: 캐릭터 이미지 */
-.left-panel {
-  flex: 1 1 45%;
-  min-width: 300px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-
-/* 오른쪽: 소개 */
-.right-panel {
-  flex: 1 1 55%;
-  min-width: 300px;
 }
