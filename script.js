@@ -64,22 +64,33 @@ function makeDraggable(element) {
     isDragging = true;
     offsetX = e.clientX - element.getBoundingClientRect().left;
     offsetY = e.clientY - element.getBoundingClientRect().top;
+
+    const rect = element.getBoundingClientRect();
     element.style.position = 'absolute';
     element.style.zIndex = 1000;
+    element.style.width = rect.width + 'px'; // 고정폭 설정
+    element.style.height = rect.height + 'px';
   });
 
   document.addEventListener('mousemove', function (e) {
     if (!isDragging) return;
-    element.style.left = (e.clientX - offsetX) + 'px';
-    element.style.top = (e.clientY - offsetY) + 'px';
+
+    // 화면 경계 제한
+    const maxLeft = window.innerWidth - element.offsetWidth;
+    const maxTop = window.innerHeight - element.offsetHeight;
+
+    let newLeft = e.clientX - offsetX;
+    let newTop = e.clientY - offsetY;
+
+    // 왼쪽, 위쪽도 제한
+    newLeft = Math.max(0, Math.min(newLeft, maxLeft));
+    newTop = Math.max(0, Math.min(newTop, maxTop));
+
+    element.style.left = newLeft + 'px';
+    element.style.top = newTop + 'px';
   });
 
   document.addEventListener('mouseup', function () {
     isDragging = false;
   });
 }
-
-// 모든 창에 드래그 적용
-window.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.window, .mini-window').forEach(makeDraggable);
-});
