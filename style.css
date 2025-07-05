@@ -1,3 +1,9 @@
+
+/* ⭐ 이건 맨 위에 추가해 주세요 (전체 요소 기본값 설정) */
+* {
+  box-sizing: border-box;
+}
+
 /* ------------------------------
    ✅ 전체 스타일 (style.css)
 ------------------------------ */
@@ -64,16 +70,16 @@ body {
 /* ------------------------------
    📦 메인 창 스타일
 ------------------------------ */
+/* 🧱 window: 고정된 너비 */
 .window {
   width: 800px;
-  min-width: 800px;
-  max-width: 800px;
   margin: 40px auto;
   border: 2px solid #999;
   background-color: #c0c0c0;
   box-shadow: 0 0 10px #444;
-  position: relative;
 }
+
+
 
 .title-bar {
   display: flex;
@@ -86,22 +92,25 @@ body {
   cursor: move;
 }
 
+/* 🧱 content 내부 영역: 좌우 패널 정렬 */
 .content {
   display: flex;
   padding: 10px;
   gap: 10px;
-  box-sizing: border-box;
-  height: 330px; /* 전체 높이 고정 */
+  height: 330px;
 }
 
+
+/* 📦 왼쪽 3x3 사진 패널 */
 .left-panel {
-  width: 300px;
+  width: 300px; /* 정확하게 100px x 3 */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 6px;
-  flex-shrink: 0;
 }
 
+
+/* 🧍 각 캐릭터 칸 (정사각형) */
 .character {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -111,30 +120,31 @@ body {
   overflow: hidden;
 }
 
+/* 📸 캐릭터 이미지 */
 .character img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
 .character:hover {
   outline: 2px solid navy;
 }
 
+/* 📝 오른쪽 설명 칸 */
 .right-panel {
-  width: 100%;
+  flex: 1;
   background-color: #fff;
   color: #000;
   padding: 10px;
   border: 2px inset #999;
   min-height: 310px;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
+/* 🔙 돌아가기 버튼 */
 .back-button {
   margin-top: 10px;
   padding: 6px 10px;
