@@ -33,8 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
         backButton.addEventListener("click", () => {
           if (step === 0) {
             content.innerHTML = `<h3>🎉 이스터에그 발견!</h3>
-              <p>축하합니다! <strong>캐릭터 5</strong>의 돌아가기 버튼을 눌러 이스터에그를 발견하셨어요!</p>
-              <p>한 번 더 누르면 진짜 돌아갑니다 :)</p>`;
+              <p>축하합니다! <strong>캐릭터 5</strong>의 돌아가기 버튼을 눌러서 바로 안 돌아가게 되는 이스터에그를 발견하셨슴</p>
+              <p>한 번 더 누르면 진짜 돌아갑니다...</p>`;
             content.appendChild(backButton);
             step = 1;
           } else {
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function resetInfoPanel() {
     infoPanel.innerHTML = `
-      <h2>초밥이</h2>
+      <h2>ㅎㅇ</h2>
       <p>안녕하세요? 왜 안녕하신가요? 부럽습니다.</p>
       <p>이쪽은... 캐릭터 누르면 설명 뜹니다. 하하하하.</p>
     `;
