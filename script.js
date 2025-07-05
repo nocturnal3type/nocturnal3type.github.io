@@ -80,19 +80,17 @@ function makeDraggable(element, handle) {
   let originalWidth = null,
     originalHeight = null;
 
-  handle.addEventListener("mousedown", function (e) {
-    isDragging = true;
-    offsetX = e.clientX - element.getBoundingClientRect().left;
-    offsetY = e.clientY - element.getBoundingClientRect().top;
+ handle.addEventListener("mousedown", function (e) {
+  isDragging = true;
+  const rect = element.getBoundingClientRect();
+  offsetX = e.clientX - rect.left;
+  offsetY = e.clientY - rect.top;
 
-    originalWidth = element.offsetWidth;
-    originalHeight = element.offsetHeight;
-    element.style.width = originalWidth + "px";
-    element.style.height = originalHeight + "px";
-
-    element.style.position = "absolute";
-    element.style.zIndex = 1000;
-  });
+  element.style.width = rect.width + "px";
+  element.style.height = rect.height + "px";
+  element.style.position = "absolute";
+  element.style.zIndex = 1000;
+});
 
   document.addEventListener("mousemove", function (e) {
     if (!isDragging) return;
@@ -114,7 +112,7 @@ function makeDraggable(element, handle) {
     if (!isDragging) return;
     isDragging = false;
 
-    element.style.width = "";
-    element.style.height = "";
+    // element.style.width = "";
+   //  element.style.height = "";
   });
 }
