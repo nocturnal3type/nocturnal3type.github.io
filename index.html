@@ -3,91 +3,96 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>초밥이의 소개</title>
+  <title>nocturnal3type</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
 
-    <!-- 상단 미니 윈도우 -->
-    <div class="mini-windows">
-      <div class="mini-window">
-        <div class="mini-title-bar">오억년버튼</div>
-        <div class="mini-content">
-          <button class="mini-button">누르기</button>
-        </div>
-      </div>
-      <div class="mini-window">
-        <div class="mini-title-bar">초밥이에게 초밥을 먹여주기</div>
-        <div class="mini-content">
-          <button class="mini-button">🍣 밥주기</button>
-        </div>
+<div class="container">
+
+  <!-- 윗 창들 -->
+  <div class="mini-windows">
+    <div class="mini-window" id="drag1">
+      <div class="mini-title-bar drag-handle">오억년버튼</div>
+      <div class="mini-content">
+        <button class="mini-button">누르기</button>
       </div>
     </div>
 
-    <!-- 메인 창 -->
-    <div class="window">
-      <div class="title-bar">
-        <div class="window-title">초밥이</div>
-        <div class="window-buttons">
-          <img src="btn-close.png" alt="닫기" />
-          <img src="btn-maximize.png" alt="최대화" />
-          <img src="btn-minimize.png" alt="최소화" />
-        </div>
-      </div>
-      <div class="content">
-        <div class="left-panel">
-          <div class="character" onclick="showCharacterInfo(0)"><img src="img/char1.jpg" alt="캐릭터 1" /></div>
-          <div class="character" onclick="showCharacterInfo(1)"><img src="img/char2.jpg" alt="캐릭터 2" /></div>
-          <div class="character" onclick="showCharacterInfo(2)"><img src="img/char3.jpg" alt="캐릭터 3" /></div>
-          <div class="character" onclick="showCharacterInfo(3)"><img src="img/char4.jpg" alt="캐릭터 4" /></div>
-          <div class="character" onclick="showCharacterInfo(4)"><img src="img/char5.jpg" alt="캐릭터 5" /></div>
-          <div class="character" onclick="showCharacterInfo(5)"><img src="img/char6.jpg" alt="캐릭터 6" /></div>
-          <div class="character" onclick="showCharacterInfo(6)"><img src="img/char7.jpg" alt="캐릭터 7" /></div>
-          <div class="character" onclick="showCharacterInfo(7)"><img src="img/char8.jpg" alt="캐릭터 8" /></div>
-          <div class="character" onclick="showCharacterInfo(8)"><img src="img/char9.jpg" alt="캐릭터 9" /></div>
-        </div>
-        <div class="right-panel" id="info-panel">
-          <h2>초밥이</h2>
-          <p>안녕하세요? 왜 안녕하신가요? 부럽습니다.</p>
-          <p>이쪽은 제 여자친구들입니다. 캐릭터 누르면 설명 뜹니다. 아니? 캐릭터 아닙니다. 엄연한 제 가족들입니다.</p>
-        </div>
+    <div class="mini-window" id="drag2">
+      <div class="mini-title-bar drag-handle">초밥이에게 초밥을 먹여주기</div>
+      <div class="mini-content">
+        <button class="mini-button">🍣 줘보기</button>
       </div>
     </div>
-
-    <!-- 메모장 창 -->
-    <div class="window">
-      <div class="title-bar">
-        <div class="window-title">메모장</div>
-        <div class="window-buttons">
-          <img src="btn-close.png" alt="닫기" />
-          <img src="btn-maximize.png" alt="최대화" />
-          <img src="btn-minimize.png" alt="최소화" />
-        </div>
-      </div>
-      <div class="note-content">
-        <p>안녕하세요.</p>
-        <p>이곳은 추후에 초밥이가 쓸 메모장입니다.</p>
-      </div>
-    </div>
-
-    <!-- 음악 창 -->
-    <div class="window">
-      <div class="title-bar">
-        <div class="window-title">음악</div>
-        <div class="window-buttons">
-          <img src="btn-close.png" alt="닫기" />
-          <img src="btn-maximize.png" alt="최대화" />
-          <img src="btn-minimize.png" alt="최소화" />
-        </div>
-      </div>
-      <div class="music-content">
-        <p>🎵 현재 재생 중: <strong>Dreamy Track by SushiBoi</strong></p>
-        <img src="img/lp.png" class="lp" alt="LP" />
-      </div>
-    </div>
-
   </div>
-  <script src="script.js"></script>
+
+  <!-- 캐릭터 창 -->
+  <div class="window" id="mainWindow">
+    <div class="title-bar drag-handle" id="mainTitleBar">
+      <div class="window-title">초밥이</div>
+      <div class="window-buttons">
+        <img src="img/minimize.png" />
+        <img src="img/maximize.png" />
+        <img src="img/close.png" />
+      </div>
+    </div>
+    <div class="content">
+      <div class="left-panel">
+        <!-- 9개 캐릭터 박스 -->
+        <script>
+          for (let i = 0; i < 9; i++) {
+            document.write(`
+              <div class="character" onclick="showCharacterInfo(${i})">
+                <img src="img/char${i + 1}.jpg" />
+              </div>
+            `);
+          }
+        </script>
+      </div>
+      <div class="right-panel" id="info-panel">
+        <h2>초밥이</h2>
+        <p>안녕하세요? 왜 안녕하신가요? 부럽습니다.</p>
+        <p>이쪽은 제 여자친구들입니다. 에휴 코드 이상해져서 걍 화남 이제.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 메모장 창 -->
+  <div class="window">
+    <div class="title-bar drag-handle">
+      <div class="window-title">메모장</div>
+      <div class="window-buttons">
+        <img src="img/minimize.png" />
+        <img src="img/maximize.png" />
+        <img src="img/close.png" />
+      </div>
+    </div>
+    <div class="content note-content">
+      <p>안녕하세요</p>
+      <p>여기에 300자 정도의 텍스트가 들어갈 수 있습니다. 원하는 대로 언제든지 수정할것입림니</p>
+    </div>
+  </div>
+
+  <!-- 음악 창 -->
+  <div class="window">
+    <div class="title-bar drag-handle">
+      <div class="window-title">음악</div>
+      <div class="window-buttons">
+        <img src="img/minimize.png" />
+        <img src="img/maximize.png" />
+        <img src="img/close.png" />
+      </div>
+    </div>
+    <div class="content music-content">
+      <p>🎵 현재 재생 중: <strong>My 노래</strong></p>
+      <img src="img/lp.png" alt="LP 디스크" class="lp" />
+      <!-- <audio src="audio/your-song.mp3" controls loop></audio> -->
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
