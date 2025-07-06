@@ -3,54 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>초밥이의 덕질공간</title>
-  <title>우주먼지이자까야</title>
+  <title>nocturnaldisco</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-@@ -30,7 +30,7 @@
-  <!-- 캐릭터 창 -->
-  <div class="window" id="mainWindow">
-    <div class="title-bar drag-handle" id="mainTitleBar">
-      <div class="window-title">초밥이</div>
-      <div class="window-title">nocturnal3type</div>
+  <div class="window">
+    <div class="title-bar">
+      <div class="window-title">munji</div>
       <div class="window-buttons">
-        <img src="img/minimize.png" />
-        <img src="img/maximize.png" />
-@@ -51,9 +51,9 @@
-        </script>
+        <img src="btn-close.png" alt="닫기">
+        <img src="btn-maximize.png" alt="최대화">
+        <img src="btn-minimize.png" alt="최소화">
+      </div>
+    </div>
+    <div class="content">
+      <div class="left-panel">
+        <div class="character" onclick="showCharacterInfo(0)"><img src="char1.jpg" alt="캐릭터 1" /></div>
+        <div class="character" onclick="showCharacterInfo(1)"><img src="char2.jpg" alt="캐릭터 2" /></div>
+        <div class="character" onclick="showCharacterInfo(2)"><img src="char3.jpg" alt="캐릭터 3" /></div>
+        <div class="character" onclick="showCharacterInfo(3)"><img src="char4.jpg" alt="캐릭터 4" /></div>
+        <div class="character" onclick="showCharacterInfo(4)"><img src="char5.jpg" alt="캐릭터 5" /></div>
+        <div class="character" onclick="showCharacterInfo(5)"><img src="char6.jpg" alt="캐릭터 6" /></div>
+        <div class="character" onclick="showCharacterInfo(6)"><img src="char7.jpg" alt="캐릭터 7" /></div>
+        <div class="character" onclick="showCharacterInfo(7)"><img src="char8.jpg" alt="캐릭터 8" /></div>
+        <div class="character" onclick="showCharacterInfo(8)"><img src="char9.jpg" alt="캐릭터 9" /></div>
       </div>
       <div class="right-panel" id="info-panel">
-        <h2>초밥이</h2>
-        <h2>ㅎㅇ</h2>
-        <p>안녕하세요? 왜 안녕하신가요? 부럽습니다.</p>
-        <p>이쪽은 제 여자친구들입니다. 캐릭터 누르면 설명 뜹니다. 아니? 캐릭터 아닙니다. 엄연한 제 가족들입니다.</p>
-        <p>이쪽은... 캐릭터 누르면 설명 뜹니다. 하하하하.</p>
+        <h2>하나둘셋야</h2>
+        <p>ㅎㅇ</p>
+        <p>ㅎㅇ,,,</p>
       </div>
     </div>
   </div>
-@@ -70,7 +70,7 @@
-    </div>
-    <div class="content note-content">
-      <p>안녕하세요</p>
-      <p>여기에 300자 정도의 텍스트가 들어갈 수 있습니다. 원하는 대로 언제든지 수정해도 됩니다. 덕질 감상, 노트, 기록, 아무거나!</p>
-      <p>여기에 300자 정도의 텍스트가 들어갈 수 있습니다. 원하는 대로 언제든지 수정해도 됩니다. 근데 지금은 지피티가 준 코드 고치느라 생각 안납니다.</p>
-    </div>
-  </div>
-
-@@ -85,14 +85,14 @@
-      </div>
-    </div>
-    <div class="content music-content">
-      <p>🎵 현재 재생 중: <strong>My Favorite Song</strong></p>
-      <p>🎵 현재 재생 중: <strong>뭔가의 음악을 넣을 생각이겠죠</strong></p>
-      <img src="img/lp.png" alt="LP 디스크" class="lp" />
-      <!-- <audio src="audio/your-song.mp3" controls loop></audio> -->
-    </div>
-  </div>
-
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
