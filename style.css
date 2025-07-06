@@ -1,234 +1,143 @@
 /* ⭐ 이건 맨 위에 추가해 주세요 (전체 요소 기본값 설정) */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* ------------------------------
-    ✅ 전체 스타일 (style.css)
+   ✅ 전체 스타일 (style.css)
 ------------------------------ */
-
-body {
-    /* HTML body에 Tailwind bg-gray-700이 적용되어 있으므로, 여기서 중복 방지 */
-    margin: 0;
-    /* HTML에서 Courier New, Inter 폰트 설정되어 있음 */
-    /* color: white; - Tailwind에서 텍스트 색상 관리 */
-    cursor: url('https://cur.cursors-4u.net/cursors/cur-2/cur117.cur'), auto;
-    /* Tailwind에서 min-h-screen, flex, items-center, justify-center, p-4 적용 */
-}
-
-/* 컨테이너는 이제 윈도우들의 절대 위치 기준점이 됩니다. */
-.container {
-    /* HTML에서 w-full max-w-6xl mx-auto min-h-[600px] p-4 bg-gradient-to-br from-blue-400 to-indigo-600 shadow-lg rounded-lg border-4 border-gray-800 overflow-hidden relative 적용 */
-    /* 최소 높이를 설정하여 윈도우들이 배치될 공간을 확보합니다. */
-    min-height: 800px; /* 윈도우들이 배치될 충분한 높이 */
-    position: relative; /* 자식 요소인 윈도우들의 absolute positioning 기준점 */
-}
-
+@@ -64,17 +70,17 @@
 /* ------------------------------
-    🎛️ 상단 더미 버튼 창 (Mini Windows)
+   📦 메인 창 스타일
 ------------------------------ */
-.mini-window {
-    /* HTML에서 bg-gray-200 border-2 border-gray-400 shadow-md rounded-lg overflow-hidden cursor-grab active:cursor-grabbing 적용 */
-    width: 240px;
-    user-select: none;
-    position: absolute; /* 드래그를 위해 absolute 포지셔닝 */
-    /* left, top은 HTML 인라인 스타일 또는 JS에서 설정 */
-}
-
-.mini-title-bar {
-    /* HTML에서 bg-blue-600 text-white p-1 px-2 text-sm font-bold flex justify-between items-center rounded-t-md drag-handle 적용 */
-    cursor: grab; /* 90년대 윈도우 드래그 느낌을 위해 grab 커서 사용 */
-}
-
-.mini-title-bar.active {
-    cursor: grabbing; /* 드래그 중 커서 */
-}
-
-.mini-content {
-    /* HTML에서 p-2 적용 */
-    color: black;
-}
-
-.mini-button {
-    /* Tailwind 클래스와 함께 90년대 버튼 스타일 유지 */
-    padding: 6px 12px;
-    border: 2px outset #999; /* 90년대 버튼 입체감 */
-    background-color: #e0e0e0;
-    cursor: pointer;
-    box-shadow: 1px 1px 0px #fff, -1px -1px 0px #666; /* 입체 그림자 */
-    font-weight: bold;
-    color: black;
-    border-radius: 4px; /* 약간의 둥근 모서리 */
-}
-
-.mini-button:active {
-    border: 2px inset #999; /* 클릭 시 눌린 효과 */
-    box-shadow: inset 1px 1px 0px #666, inset -1px -1px 0px #fff;
-}
-
-/* ------------------------------
-    📦 메인 창 스타일 (Main Windows)
------------------------------- */
+/* 🧱 window: 고정된 너비 */
 .window {
-    /* HTML에서 bg-gray-200 border-2 border-gray-400 shadow-lg rounded-lg overflow-hidden cursor-grab active:cursor-grabbing 적용 */
-    position: absolute; /* 드래그를 위해 absolute 포지셔닝 */
-    /* left, top, width, max-width는 HTML 인라인 스타일 또는 JS에서 설정 */
-    user-select: none;
-    min-width: 300px; /* 최소 너비 설정 */
-    min-height: 200px; /* 최소 높이 설정 */
+  width: 800px;
+  min-width: 800px;
+  max-width: 800px;
+  margin: 40px auto;
+  border: 2px solid #999;
+  background-color: #c0c0c0;
+  box-shadow: 0 0 10px #444;
+  position: relative;
 }
+
+
 
 .title-bar {
-    /* HTML에서 bg-blue-600 text-white p-2 px-3 font-bold flex justify-between items-center rounded-t-md drag-handle 적용 */
-    cursor: grab; /* 드래그 커서 */
-}
-
-.title-bar.active {
-    cursor: grabbing; /* 드래그 중 커서 */
-}
-
-.window-buttons img {
-    /* HTML에서 w-5 h-5 cursor-pointer 적용 */
-    image-rendering: pixelated; /* 픽셀 아트 이미지 선명하게 */
+  display: flex;
+  justify-content: space-between;
+@@ -86,22 +92,25 @@
+  cursor: move;
 }
 
 /* 🧱 content 내부 영역: 좌우 패널 정렬 */
 .content {
-    /* HTML에서 flex flex-col md:flex-row p-4 bg-gray-100 적용 */
-    /* height는 유동적으로 변경되도록 제거하거나 min-height로 변경 */
-    min-height: 200px; /* 최소 높이 설정 */
-    flex-wrap: wrap; /* 작은 화면에서 패널이 줄 바꿈되도록 */
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+  box-sizing: border-box;
+  height: 330px; /* 전체 높이 고정 */
+  height: 330px;
 }
+
 
 /* 📦 왼쪽 3x3 사진 패널 */
 .left-panel {
-    /* HTML에서 grid grid-cols-3 gap-2 p-2 bg-gray-200 border border-gray-300 rounded-md mb-4 md:mb-0 md:mr-4 flex-shrink-0 w-full md:w-auto 적용 */
-    /* width: 300px; 대신 flex-shrink-0와 md:w-auto로 반응형 처리 */
-    width: 100%; /* 모바일에서 전체 너비 */
-    max-width: 300px; /* 데스크톱에서 최대 너비 */
+  width: 300px;
+  width: 300px; /* 정확하게 100px x 3 */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  flex-shrink: 0;
 }
 
-@media (min-width: 768px) { /* md breakpoint */
-    .left-panel {
-        width: 300px; /* 데스크톱에서 고정 너비 */
-    }
-}
 
 /* 🧍 각 캐릭터 칸 (정사각형) */
 .character {
-    /* HTML에서 Tailwind 클래스 대신 직접 스타일링 유지 */
-    width: 100%;
-    aspect-ratio: 1 / 1; /* 정사각형 유지 */
-    background-color: white;
-    border: 2px inset #999; /* 90년대 입체감 */
-    cursor: pointer;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: outline 0.1s ease-in-out; /* 호버 효과 부드럽게 */
+  width: 100%;
+  aspect-ratio: 1 / 1;
+@@ -111,79 +120,80 @@
+  overflow: hidden;
 }
 
 /* 📸 캐릭터 이미지 */
 .character img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    image-rendering: pixelated; /* 픽셀 아트 이미지 선명하게 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .character:hover {
-    outline: 2px solid navy; /* 호버 시 파란색 테두리 */
-    outline-offset: -2px; /* 테두리가 안쪽으로 생기도록 */
+  outline: 2px solid navy;
 }
 
 /* 📝 오른쪽 설명 칸 */
 .right-panel {
-    /* HTML에서 flex-grow p-4 bg-white border border-gray-300 rounded-md overflow-y-auto max-h-96 적용 */
-    color: #000; /* 텍스트 색상 */
-    /* justify-content: space-between; 제거 - 콘텐츠에 따라 유동적으로 */
+  width: 100%;
+  flex: 1;
+  background-color: #fff;
+  color: #000;
+  padding: 10px;
+  border: 2px inset #999;
+  min-height: 310px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* 🔙 돌아가기 버튼 */
 .back-button {
-    /* 90년대 버튼 스타일 유지 */
-    margin-top: 15px; /* HTML에서 10px로 되어있었음 */
-    padding: 6px 12px;
-    background-color: #c0c0c0;
-    border: 2px outset #999;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 1px 1px 0px #fff, -1px -1px 0px #666;
-    color: black;
-    border-radius: 4px;
+  margin-top: 10px;
+  padding: 6px 10px;
+  background-color: #c0c0c0;
+  border: 2px outset #999;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-.back-button:active {
-    border: 2px inset #999;
-    box-shadow: inset 1px 1px 0px #666, inset -1px -1px 0px #fff;
+.back-button:hover {
+  background-color: #a0a0a0;
 }
+
+
 
 /* 메모장 & 음악창 */
 .note-content, .music-content {
-    /* HTML에서 p-4 bg-white border border-gray-300 rounded-b-md overflow-y-auto max-h-64 적용 */
-    color: black;
-    font-size: 14px;
+  background-color: white;
+  color: black;
+  padding: 10px;
+  font-size: 14px;
 }
 
 .lp {
-    /* HTML에서 w-32 h-32 rounded-full animate-spin-slow 적용 */
-    /* width: 80px; 대신 Tailwind w-32 h-32 사용 */
-    margin-top: 10px;
+  width: 80px;
+  margin-top: 10px;
 }
 
-/* Tailwind CSS에서 사용할 커스텀 애니메이션 정의 */
-@keyframes spin-slow {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.back-button {
+  margin-top: 15px;
+  padding: 6px 12px;
+  background-color: #c0c0c0;
+  border: 2px outset #999;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-/* Tailwind CSS config에 추가할 애니메이션 클래스 */
-.animate-spin-slow {
-    animation: spin-slow 10s linear infinite; /* 10초 동안 선형으로 무한 반복 */
+.back-button:hover {
+  background-color: #a0a0a0;
 }
 
-
-/* 레인보우 색상 변수 (CSS 변수로 유지) */
 :root {
-    --rainbow-0: #FF0000; /* Red */
-    --rainbow-1: #FFA500; /* Orange */
-    --rainbow-2: #FFD700; /* Gold */
-    --rainbow-3: #008000; /* Green */
-    --rainbow-4: #0000FF; /* Blue */
-    --rainbow-5: #4B0082; /* Indigo */
-    --rainbow-6: #EE82EE; /* Violet */
-    --rainbow-7: #FFC0CB; /* Pink */
-    --rainbow-8: #00FFFF; /* Cyan */
-}
-
-/* 윈도우 최소화/최대화/닫기 버튼의 실제 이미지에 대한 스타일 */
-.window-buttons img {
-    border: 1px solid #000; /* 90년대 버튼 테두리 느낌 */
-    background-color: #c0c0c0; /* 90년대 버튼 배경색 */
-    padding: 1px; /* 아이콘과 테두리 사이 여백 */
-    box-shadow: 1px 1px 0px #fff, -1px -1px 0px #666; /* 입체 그림자 */
-    transition: background-color 0.1s ease;
-}
-
-.window-buttons img:hover {
-    background-color: #a0a0a0; /* 호버 시 색상 변경 */
-}
-
-.window-buttons img:active {
-    border: 1px inset #000;
-    box-shadow: inset 1px 1px 0px #666, inset -1px -1px 0px #fff;
-}
-
-/* 최소화된 윈도우 스타일 */
-.minimized {
-    display: none !important; /* 완전히 숨김 */
+  --rainbow-0: red;
+  --rainbow-1: orange;
+  --rainbow-2: gold;
+  --rainbow-3: green;
+  --rainbow-4: blue;
+  --rainbow-5: indigo;
+  --rainbow-6: violet;
+  --rainbow-7: pink;
+  --rainbow-8: cyan;
 }
