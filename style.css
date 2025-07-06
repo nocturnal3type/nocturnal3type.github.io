@@ -1,94 +1,87 @@
-/* ⭐ 이건 맨 위에 추가해 주세요 (전체 요소 기본값 설정) */
+
 * {
   box-sizing: border-box;
 }
 
-/* ------------------------------
-   ✅ 전체 스타일 (style.css)
------------------------------- */
-@@ -64,17 +70,17 @@
-/* ------------------------------
-   📦 메인 창 스타일
------------------------------- */
-/* 🧱 window: 고정된 너비 */
+body {
+  background-color: black;
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  cursor: url('https://cur.cursors-4u.net/cursors/cur-2/cur117.cur'), auto;
+}
+
 .window {
   width: 800px;
-  min-width: 800px;
-  max-width: 800px;
   margin: 40px auto;
   border: 2px solid #999;
   background-color: #c0c0c0;
   box-shadow: 0 0 10px #444;
-  position: relative;
 }
-
-
 
 .title-bar {
   display: flex;
   justify-content: space-between;
-@@ -86,22 +92,25 @@
-  cursor: move;
+  align-items: center;
+  background-color: navy;
+  color: white;
+  padding: 6px 10px;
+  font-weight: bold;
 }
 
-/* 🧱 content 내부 영역: 좌우 패널 정렬 */
+.window-buttons img {
+  width: 16px;
+  height: 16px;
+  margin-left: 4px;
+  background-color: white;
+  border: 1px solid black;
+}
+
 .content {
   display: flex;
   padding: 10px;
   gap: 10px;
-  box-sizing: border-box;
-  height: 330px; /* 전체 높이 고정 */
   height: 330px;
 }
 
-
-/* 📦 왼쪽 3x3 사진 패널 */
 .left-panel {
   width: 300px;
-  width: 300px; /* 정확하게 100px x 3 */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 6px;
-  flex-shrink: 0;
 }
 
-
-/* 🧍 각 캐릭터 칸 (정사각형) */
 .character {
   width: 100%;
   aspect-ratio: 1 / 1;
-@@ -111,79 +120,80 @@
+  background-color: white;
+  border: 2px inset #999;
+  cursor: pointer;
   overflow: hidden;
 }
 
-/* 📸 캐릭터 이미지 */
 .character img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
 .character:hover {
   outline: 2px solid navy;
 }
 
-/* 📝 오른쪽 설명 칸 */
 .right-panel {
-  width: 100%;
   flex: 1;
   background-color: #fff;
   color: #000;
   padding: 10px;
   border: 2px inset #999;
   min-height: 310px;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-/* 🔙 돌아가기 버튼 */
 .back-button {
   margin-top: 10px;
   padding: 6px 10px;
@@ -100,44 +93,4 @@
 
 .back-button:hover {
   background-color: #a0a0a0;
-}
-
-
-
-/* 메모장 & 음악창 */
-.note-content, .music-content {
-  background-color: white;
-  color: black;
-  padding: 10px;
-  font-size: 14px;
-}
-
-.lp {
-  width: 80px;
-  margin-top: 10px;
-}
-
-.back-button {
-  margin-top: 15px;
-  padding: 6px 12px;
-  background-color: #c0c0c0;
-  border: 2px outset #999;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.back-button:hover {
-  background-color: #a0a0a0;
-}
-
-:root {
-  --rainbow-0: red;
-  --rainbow-1: orange;
-  --rainbow-2: gold;
-  --rainbow-3: green;
-  --rainbow-4: blue;
-  --rainbow-5: indigo;
-  --rainbow-6: violet;
-  --rainbow-7: pink;
-  --rainbow-8: cyan;
 }
