@@ -1,7 +1,13 @@
+/* ⭐ 이건 맨 위에 추가해 주세요 (전체 요소 기본값 설정) */
 
 * {
   box-sizing: border-box;
 }
+
+/* ------------------------------
+   ✅ 전체 스타일 (style.css)
+------------------------------ */
+
 
 body {
   background-color: black;
@@ -11,6 +17,60 @@ body {
   cursor: url('https://cur.cursors-4u.net/cursors/cur-2/cur117.cur'), auto;
 }
 
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* ------------------------------
+   🎛️ 상단 더미 버튼 창
+------------------------------ */
+.mini-windows {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.mini-window {
+  width: 240px;
+  background-color: #c0c0c0;
+  border: 2px solid #999;
+  box-shadow: 2px 2px 4px #333;
+  user-select: none;
+  position: relative;
+}
+
+.mini-title-bar {
+  background-color: navy;
+  color: white;
+  padding: 6px 10px;
+  font-weight: bold;
+  cursor: move;
+}
+
+.mini-content {
+  padding: 10px;
+  color: black;
+}
+
+.mini-button {
+  padding: 6px 12px;
+  border: 2px outset #999;
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
+
+.mini-button:hover {
+  background-color: #d0d0d0;
+}
+
+/* ------------------------------
+   📦 메인 창 스타일
+------------------------------ */
 .window {
   width: 800px;
   margin: 40px auto;
@@ -27,14 +87,27 @@ body {
   color: white;
   padding: 6px 10px;
   font-weight: bold;
+  cursor: move;
+}
+
+.window-title {
+  flex: 1;
 }
 
 .window-buttons img {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   margin-left: 4px;
   background-color: white;
   border: 1px solid black;
+}
+
+.close-button {
+  width: 16px;
+  height: 16px;
+  background-color: red;
+  border: 2px outset #fff;
+  cursor: pointer;
 }
 
 .content {
@@ -44,8 +117,9 @@ body {
   height: 330px;
 }
 
+
 .left-panel {
-  width: 300px;
+  width: 300px; /* 정확하게 100px x 3 */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 6px;
@@ -70,6 +144,8 @@ body {
   outline: 2px solid navy;
 }
 
+/* 우측 설명창 */
+
 .right-panel {
   flex: 1;
   background-color: #fff;
@@ -80,6 +156,19 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+/* 메모장 & 음악창 */
+.note-content, .music-content {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.lp {
+  width: 80px;
+  margin-top: 10px;
 }
 
 .back-button {
@@ -93,4 +182,16 @@ body {
 
 .back-button:hover {
   background-color: #a0a0a0;
+}
+
+:root {
+  --rainbow-0: red;
+  --rainbow-1: orange;
+  --rainbow-2: gold;
+  --rainbow-3: green;
+  --rainbow-4: blue;
+  --rainbow-5: indigo;
+  --rainbow-6: violet;
+  --rainbow-7: pink;
+  --rainbow-8: cyan;
 }
