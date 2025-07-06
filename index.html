@@ -1,143 +1,56 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>우주먼지이자까야</title>
-    <!-- Tailwind CSS CDN을 추가하여 스타일링에 활용합니다. -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Inter 폰트를 사용합니다. 90년대 감성을 위해 Courier New도 유지합니다. -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <!-- custom CSS 파일 (style.css)을 여기에 연결합니다. -->
-    <link rel="stylesheet" href="style.css" />
-    <style>
-        /* 기본 폰트를 'Courier New'로 설정하여 90년대 감성을 유지하고, fallback으로 Inter를 사용합니다. */
-        body {
-            font-family: 'Courier New', Courier, monospace, 'Inter', sans-serif;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>초밥이의 덕질공간</title>
+  <title>우주먼지이자까야</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<!-- body에 Tailwind 클래스를 추가하여 전체 배경 및 중앙 정렬을 돕습니다. -->
-<body class="bg-gray-700 flex items-center justify-center min-h-screen p-4">
-
-    <!-- 전체 컨테이너: 윈도우들을 담을 공간. 상대 위치를 가집니다. -->
-    <div class="container relative w-full max-w-6xl mx-auto min-h-[600px] p-4 bg-gradient-to-br from-blue-400 to-indigo-600 shadow-lg rounded-lg border-4 border-gray-800 overflow-hidden">
-
-        <!-- 윗 창들 (미니 윈도우들) -->
-        <!-- 초기 위치를 설정하여 겹치지 않도록 합니다. -->
-        <div class="mini-windows absolute top-4 left-4 flex space-x-4 z-10">
-            <!-- 오억년 버튼 미니 윈도우 -->
-            <div id="drag1" class="mini-window bg-gray-200 border-2 border-gray-400 shadow-md rounded-lg overflow-hidden cursor-grab active:cursor-grabbing" style="left: 20px; top: 20px;">
-                <div class="mini-title-bar bg-blue-600 text-white p-1 px-2 text-sm font-bold flex justify-between items-center rounded-t-md drag-handle">
-                    오억년버튼
-                    <div class="mini-window-buttons flex space-x-1">
-                        <!-- 실제 이미지 경로를 사용하고 alt 속성을 추가합니다. -->
-                        <img src="img/minimize.png" alt="최소화 버튼" class="w-4 h-4 cursor-pointer" />
-                        <img src="img/close.png" alt="닫기 버튼" class="w-4 h-4 cursor-pointer" />
-                    </div>
-                </div>
-                <div class="mini-content p-2">
-                    <button class="mini-button bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-1 px-3 rounded-md border border-gray-500 shadow-sm text-sm">누르기</button>
-                </div>
-            </div>
-
-            <!-- 초밥이에게 초밥을 먹여주기 미니 윈도우 -->
-            <div id="drag2" class="mini-window bg-gray-200 border-2 border-gray-400 shadow-md rounded-lg overflow-hidden cursor-grab active:cursor-grabbing" style="left: 280px; top: 20px;">
-                <div class="mini-title-bar bg-blue-600 text-white p-1 px-2 text-sm font-bold flex justify-between items-center rounded-t-md drag-handle">
-                    초밥이에게 초밥을 먹여주기
-                    <div class="mini-window-buttons flex space-x-1">
-                        <img src="img/minimize.png" alt="최소화 버튼" class="w-4 h-4 cursor-pointer" />
-                        <img src="img/close.png" alt="닫기 버튼" class="w-4 h-4 cursor-pointer" />
-                    </div>
-                </div>
-                <div class="mini-content p-2">
-                    <button class="mini-button bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-1 px-3 rounded-md border border-gray-500 shadow-sm text-sm">🍣 줘보기</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- 메인 캐릭터 소개 창 -->
-        <!-- 초기 위치를 설정하여 겹치지 않도록 합니다. -->
-        <div id="mainWindow" class="window bg-gray-200 border-2 border-gray-400 shadow-lg rounded-lg overflow-hidden cursor-grab active:cursor-grabbing z-20" style="left: 50%; top: 100px; transform: translateX(-50%); width: 90%; max-width: 800px;">
-            <div id="mainTitleBar" class="title-bar bg-blue-600 text-white p-2 px-3 font-bold flex justify-between items-center rounded-t-md drag-handle">
-                <div class="window-title text-lg">nocturnal3type - 내 소개</div>
-                <div class="window-buttons flex space-x-1">
-                    <img src="img/minimize.png" alt="최소화 버튼" class="w-5 h-5 cursor-pointer" />
-                    <img src="img/maximize.png" alt="최대화 버튼" class="w-5 h-5 cursor-pointer" />
-                    <img src="img/close.png" alt="닫기 버튼" class="w-5 h-5 cursor-pointer" />
-                </div>
-            </div>
-            <div class="content flex flex-col md:flex-row p-4 bg-gray-100">
-                <!-- 왼쪽 패널: 9개 캐릭터 박스 (JavaScript로 동적 생성 예정) -->
-                <div class="left-panel grid grid-cols-3 gap-2 p-2 bg-gray-200 border border-gray-300 rounded-md mb-4 md:mb-0 md:mr-4 flex-shrink-0 w-full md:w-auto">
-                    <!-- JavaScript로 여기에 캐릭터 이미지가 동적으로 삽입됩니다. -->
-                    <div class="character-placeholder text-gray-500 text-center col-span-3 py-4">
-                        캐릭터 이미지가 여기에 표시됩니다.<br> (script.js에서 로드 예정)
-                    </div>
-                </div>
-                <!-- 오른쪽 패널: 캐릭터 정보 표시 -->
-                <div id="info-panel" class="right-panel flex-grow p-4 bg-white border border-gray-300 rounded-md overflow-y-auto max-h-96">
-                    <h2 class="text-xl font-bold mb-2 text-gray-800">안녕하세요! 우주먼지이자까야입니다.</h2>
-                    <p class="text-gray-700 mb-4">
-                        이곳은 제가 좋아하는 만화 캐릭터들을 소개하는 공간입니다.
-                        왼쪽의 캐릭터 이미지를 클릭하면 각 캐릭터에 대한 저의 애정 가득한 설명을 보실 수 있습니다.
-                        부디 즐겁게 둘러봐 주세요!
-                    </p>
-                    <p class="text-gray-600 text-sm">
-                        (아직 캐릭터를 선택하지 않으셨습니다. 아무 캐릭터나 클릭하여 시작해보세요!)
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- 메모장 창 (업데이트 소식) -->
-        <!-- 초기 위치를 설정하여 겹치지 않도록 합니다. -->
-        <div class="window bg-gray-200 border-2 border-gray-400 shadow-lg rounded-lg overflow-hidden cursor-grab active:cursor-grabbing z-20" style="left: 100px; top: 400px; width: 90%; max-width: 600px;">
-            <div class="title-bar bg-blue-600 text-white p-2 px-3 font-bold flex justify-between items-center rounded-t-md drag-handle">
-                <div class="window-title text-lg">메모장 - 업데이트 소식</div>
-                <div class="window-buttons flex space-x-1">
-                    <img src="img/minimize.png" alt="최소화 버튼" class="w-5 h-5 cursor-pointer" />
-                    <img src="img/maximize.png" alt="최대화 버튼" class="w-5 h-5 cursor-pointer" />
-                    <img src="img/close.png" alt="닫기 버튼" class="w-5 h-5 cursor-pointer" />
-                </div>
-            </div>
-            <div class="content note-content p-4 bg-white border border-gray-300 rounded-b-md overflow-y-auto max-h-64">
-                <p class="text-gray-800 mb-2"><strong>[2025년 7월 6일]</strong> 드디어 팬 페이지 첫 버전 HTML 코드를 완성했습니다! 이제 CSS와 JavaScript로 90년대 감성을 불어넣을 차례입니다.</p>
-                <p class="text-gray-700 mb-2"><strong>[2025년 7월 5일]</strong> 캐릭터 9명의 이미지를 모두 준비했습니다. 어떤 캐릭터를 가장 좋아하시나요?</p>
-                <p class="text-gray-600"><strong>[2025년 7월 1일]</strong> 팬 페이지 기획 시작! 90년대 윈도우 테마로 결정했습니다. 추억 돋는 디자인을 기대해주세요!</p>
-                <p class="text-gray-500 mt-4 text-sm">
-                    여기에 최신 업데이트 소식이나 블로그 글을 추가할 수 있습니다.
-                    최대 300자 정도의 텍스트가 적당합니다.
-                </p>
-            </div>
-        </div>
-
-        <!-- 음악 재생 창 -->
-        <!-- 초기 위치를 설정하여 겹치지 않도록 합니다. -->
-        <div class="window bg-gray-200 border-2 border-gray-400 shadow-lg rounded-lg overflow-hidden cursor-grab active:cursor-grabbing z-20" style="left: 600px; top: 50px; width: 90%; max-width: 400px;">
-            <div class="title-bar bg-blue-600 text-white p-2 px-3 font-bold flex justify-between items-center rounded-t-md drag-handle">
-                <div class="window-title text-lg">음악 - 현재 재생 중</div>
-                <div class="window-buttons flex space-x-1">
-                    <img src="img/minimize.png" alt="최소화 버튼" class="w-5 h-5 cursor-pointer" />
-                    <img src="img/maximize.png" alt="최대화 버튼" class="w-5 h-5 cursor-pointer" />
-                    <img src="img/close.png" alt="닫기 버튼" class="w-5 h-5 cursor-pointer" />
-                </div>
-            </div>
-            <div class="content music-content flex flex-col items-center justify-center p-4 bg-white border border-gray-300 rounded-b-md">
-                <p class="text-gray-800 mb-4 text-lg">🎵 현재 재생 중: <strong>[추억의 90년대 애니메이션 OST]</strong></p>
-                <!-- LP 디스크 이미지 -->
-                <img src="img/lp.png" alt="LP 디스크 이미지" class="lp w-32 h-32 rounded-full animate-spin-slow">
-                <!-- 실제 오디오 플레이어는 주석 처리했습니다. 필요 시 주석을 해제하고 `src` 경로를 지정하세요. -->
-                <!-- <audio src="audio/your-song.mp3" controls loop class="mt-4 w-full max-w-xs"></audio> -->
-                <p class="text-gray-600 text-sm mt-2">
-                    (음악 파일이 준비되면 <code class="bg-gray-200 p-1 rounded">audio</code> 태그의 주석을 해제하고 경로를 설정해주세요.)
-                </p>
-            </div>
-        </div>
-
+<body>
+@@ -30,7 +30,7 @@
+  <!-- 캐릭터 창 -->
+  <div class="window" id="mainWindow">
+    <div class="title-bar drag-handle" id="mainTitleBar">
+      <div class="window-title">초밥이</div>
+      <div class="window-title">nocturnal3type</div>
+      <div class="window-buttons">
+        <img src="img/minimize.png" />
+        <img src="img/maximize.png" />
+@@ -51,9 +51,9 @@
+        </script>
+      </div>
+      <div class="right-panel" id="info-panel">
+        <h2>초밥이</h2>
+        <h2>ㅎㅇ</h2>
+        <p>안녕하세요? 왜 안녕하신가요? 부럽습니다.</p>
+        <p>이쪽은 제 여자친구들입니다. 캐릭터 누르면 설명 뜹니다. 아니? 캐릭터 아닙니다. 엄연한 제 가족들입니다.</p>
+        <p>이쪽은... 캐릭터 누르면 설명 뜹니다. 하하하하.</p>
+      </div>
     </div>
+  </div>
+@@ -70,7 +70,7 @@
+    </div>
+    <div class="content note-content">
+      <p>안녕하세요</p>
+      <p>여기에 300자 정도의 텍스트가 들어갈 수 있습니다. 원하는 대로 언제든지 수정해도 됩니다. 덕질 감상, 노트, 기록, 아무거나!</p>
+      <p>여기에 300자 정도의 텍스트가 들어갈 수 있습니다. 원하는 대로 언제든지 수정해도 됩니다. 근데 지금은 지피티가 준 코드 고치느라 생각 안납니다.</p>
+    </div>
+  </div>
 
-    <!-- JavaScript 파일은 body 닫는 태그 바로 위에 위치하여 HTML이 로드된 후 실행되도록 합니다. -->
-    <script src="script.js"></script>
+@@ -85,14 +85,14 @@
+      </div>
+    </div>
+    <div class="content music-content">
+      <p>🎵 현재 재생 중: <strong>My Favorite Song</strong></p>
+      <p>🎵 현재 재생 중: <strong>뭔가의 음악을 넣을 생각이겠죠</strong></p>
+      <img src="img/lp.png" alt="LP 디스크" class="lp" />
+      <!-- <audio src="audio/your-song.mp3" controls loop></audio> -->
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
