@@ -1,3 +1,4 @@
+/* ⭐ 전체 초기화 */
 * {
   box-sizing: border-box;
 }
@@ -19,16 +20,19 @@ body {
   gap: 15px;
 }
 
-/* 버튼 및 음악창 정렬 */
+/* ------------------------------
+   🎛️ 상단 미니 윈도우들
+------------------------------ */
 .mini-windows {
   display: flex;
   gap: 10px;
   justify-content: flex-start;
 }
 
-/* 버튼/음악창 공통 */
 .mini-window {
   width: 240px;
+  min-width: 240px;
+  max-width: 240px;
   background-color: #c0c0c0;
   border: 2px solid #999;
   box-shadow: 2px 2px 4px #333;
@@ -41,6 +45,7 @@ body {
   color: white;
   padding: 6px 10px;
   font-weight: bold;
+  cursor: default;
 }
 
 .mini-content {
@@ -59,13 +64,19 @@ body {
   background-color: #d0d0d0;
 }
 
-/* ✅ 음악 전용 스타일 */
+/* ------------------------------
+   🎵 음악창 (정렬 맞춤용)
+------------------------------ */
 .music-fix {
-  width: 100%;
-  max-width: 500px;
+  width: 320px;
+  min-width: 320px;
+  max-width: 320px;
+  background-color: #c0c0c0;
+  border: 2px solid #999;
+  box-shadow: 2px 2px 4px #333;
 }
 
-.music-fix .mini-music-content {
+.mini-music-content {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -73,14 +84,17 @@ body {
   color: black;
   padding: 6px 10px;
   font-size: 13px;
+  height: 100%;
 }
 
-.music-fix .lp {
+.lp {
   width: 24px;
   height: 24px;
 }
 
-/* 큰 창들 */
+/* ------------------------------
+   📦 큰 창들 (초밥이, 메모장 등)
+------------------------------ */
 .window {
   width: 800px;
   margin: 20px auto;
@@ -97,6 +111,7 @@ body {
   color: white;
   padding: 6px 10px;
   font-weight: bold;
+  cursor: default;
 }
 
 .window-title {
@@ -111,6 +126,7 @@ body {
   border: 1px solid black;
 }
 
+/* 🔲 창 내부 공통 레이아웃 */
 .content {
   display: flex;
   padding: 10px;
@@ -118,6 +134,9 @@ body {
   height: 330px;
 }
 
+/* ------------------------------
+   👥 캐릭터창 왼쪽
+------------------------------ */
 .left-panel {
   width: 300px;
   display: grid;
@@ -144,6 +163,7 @@ body {
   outline: 2px solid navy;
 }
 
+/* 📜 캐릭터 설명창 */
 .right-panel {
   flex: 1;
   background-color: #fff;
@@ -154,14 +174,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-/* 메모장 */
-.note-content {
-  background-color: white;
-  color: black;
-  padding: 10px;
-  font-size: 14px;
 }
 
 .back-button {
@@ -177,7 +189,17 @@ body {
   background-color: #a0a0a0;
 }
 
-/* 색상용 */
+/* ------------------------------
+   📒 메모장
+------------------------------ */
+.note-content {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* 🌈 컬러 팔레트 */
 :root {
   --rainbow-0: red;
   --rainbow-1: orange;
