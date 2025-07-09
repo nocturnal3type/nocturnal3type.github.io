@@ -89,7 +89,7 @@ function makeDraggable(element, handle) {
     element.style.width = rect.width + "px";
     element.style.height = rect.height + "px";
     element.style.position = "absolute";
-    element.style.zIndex = 1000;
+    // element.style.zIndex = 1000;
   });
   
   document.addEventListener("mousemove", function (e) {
