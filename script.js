@@ -76,24 +76,35 @@ document.addEventListener("DOMContentLoaded", function () {
 function makeDraggable(element, handle) {
   let offsetX = 0,
     offsetY = 0,
-    isDragging = false;
-  let originalWidth = null,
-    originalHeight = null;
+    isDragging = false,
+    moved = false;
 
   handle.addEventListener("mousedown", function (e) {
     isDragging = true;
+    moved = false;
     const rect = element.getBoundingClientRect();
     offsetX = e.clientX - rect.left;
     offsetY = e.clientY - rect.top;
 
-    element.style.width = rect.width + "px";
-    element.style.height = rect.height + "px";
-    element.style.position = "absolute";
+    // 여기서 position 설정 ❌
+    // element.style.position = "absolute";
     // element.style.zIndex = 1000;
   });
-  
+
   document.addEventListener("mousemove", function (e) {
     if (!isDragging) return;
+
+
+    if (!moved) {
+      // 진짜 움직이기 시작했을 때만 position 설정
+      const rect = element.getBoundingClientRect();
+      element.style.position = "absolute";
+      element.style.left = rect.left + "px";
+      element.style.top = rect.top + "px";
+      element.style.width = rect.width + "px";
+      element.style.height = rect.height + "px";
+      moved = true;
+    }  
 
     const maxLeft = window.innerWidth - element.offsetWidth;
     const maxTop = window.innerHeight - element.offsetHeight;
@@ -111,8 +122,5 @@ function makeDraggable(element, handle) {
   document.addEventListener("mouseup", function () {
     if (!isDragging) return;
     isDragging = false;
-
-//    element.style.width = "";
-//    element.style.height = "";
   });
 }
