@@ -12,23 +12,34 @@
 
   <!-- 윗 창들 -->
   <div class="mini-windows">
-    <div class="mini-window" id="drag1">
+    <!-- 오억년 -->
+    <div class="mini-window">
       <div class="mini-title-bar">오억년버튼</div>
       <div class="mini-content">
         <button class="mini-button">누르기</button>
       </div>
     </div>
 
-    <div class="mini-window" id="drag2">
+    <!-- 초밥이 -->
+    <div class="mini-window">
       <div class="mini-title-bar">초밥이에게 초밥을 먹여주기</div>
       <div class="mini-content">
         <button class="mini-button">🍣 줘보기</button>
       </div>
     </div>
+
+    <!-- 음악 -->
+    <div class="music-window">
+      <div class="music-title-bar">음악</div>
+      <div class="music-content">
+        <img src="img/lp.png" alt="LP 디스크" />
+        <p><strong>My 노래</strong></p>
+      </div>
+    </div>
   </div>
 
   <!-- 캐릭터 창 -->
-  <div class="window" id="mainWindow">
+  <div class="window">
     <div class="title-bar">
       <div class="window-title">초밥이</div>
       <div class="window-buttons">
@@ -39,41 +50,36 @@
     </div>
     <div class="content">
       <div class="left-panel">
-        <!-- 캐릭터 9개 -->
-        <div class="character" data-name="캐릭터 1" data-desc="설명불가 님이 알아서 찾아보세요" data-index="0">
+        <!-- 9개 캐릭터 박스 -->
+        <div class="character" data-index="0" data-name="캐릭터 1" data-desc="설명불가 님이 알아서 찾아보세요">
           <img src="img/char1.jpg" />
         </div>
-        <div class="character" data-name="캐릭터 2" data-desc="하하하" data-index="1">
+        <div class="character" data-index="1" data-name="캐릭터 2" data-desc="하하하">
           <img src="img/char2.jpg" />
         </div>
-        <div class="character" data-name="캐릭터 3" data-desc="허허허" data-index="2">
+        <div class="character" data-index="2" data-name="캐릭터 3" data-desc="허허허">
           <img src="img/char3.jpg" />
         </div>
-        <div class="character" data-name="캐릭터 4" data-desc="호호호" data-index="3">
+        <div class="character" data-index="3" data-name="캐릭터 4" data-desc="호호호">
           <img src="img/char4.jpg" />
         </div>
-        <div class="character" data-name="캐릭터 5" data-desc="으아악" data-index="4">
+        <div class="character" data-index="4" data-name="캐릭터 5" data-desc="으아악">
           <img src="img/char5.jpg" />
         </div>
-        <div class="character" data-name="캐릭터 6" data-desc="엉엉." data-index="5">
+        <div class="character" data-index="5" data-name="캐릭터 6" data-desc="엉엉.">
           <img src="img/char6.jpg" />
         </div>
-        <div class="character" data-name="캐릭터 7" data-desc="메롱." data-index="6">
+        <div class="character" data-index="6" data-name="캐릭터 7" data-desc="메롱.">
           <img src="img/char7.jpg" />
         </div>
-        <div class="character" data-name="캐릭터 8" data-desc="삐약삐약" data-index="7">
+        <div class="character" data-index="7" data-name="캐릭터 8" data-desc="삐약삐약">
           <img src="img/char8.jpg" />
         </div>
-        <div class="character" data-name="캐릭터 9" data-desc="이쒸" data-index="8">
+        <div class="character" data-index="8" data-name="캐릭터 9" data-desc="이쒸">
           <img src="img/char9.jpg" />
         </div>
       </div>
-
-      <!-- 오른쪽 설명창 -->
-      <div class="right-panel" id="info-panel"
-           data-title="초밥이"
-           data-line1="안녕하세요? 왜 안녕하신가요? 부럽습니다."
-           data-line2="이쪽은 제 여자친구들입니다. 캐릭터 누르면 설명 뜹니다. 아니? 캐릭터 아닙니다. 엄연한 제 가족들입니다.">
+      <div class="right-panel" id="info-panel">
         <h2>초밥이</h2>
         <p>안녕하세요? 왜 안녕하신가요? 부럽습니다.</p>
         <p>이쪽은 제 여자친구들입니다. 캐릭터 누르면 설명 뜹니다. 아니? 캐릭터 아닙니다. 엄연한 제 가족들입니다.</p>
@@ -81,7 +87,7 @@
     </div>
   </div>
 
-  <!-- 메모장 창 -->
+  <!-- 메모장 -->
   <div class="window">
     <div class="title-bar">
       <div class="window-title">메모장</div>
@@ -93,24 +99,7 @@
     </div>
     <div class="content note-content">
       <p>안녕하세요</p>
-      <p>여기에 300자 정도의 텍스트가 들어갈 수 있습니다. 원하는 대로 언제든지 수정할 수 있습니다.</p>
-    </div>
-  </div>
-
-  <!-- 음악 창 -->
-  <div class="window">
-    <div class="title-bar">
-      <div class="window-title">음악</div>
-      <div class="window-buttons">
-        <img src="img/minimize.png" />
-        <img src="img/maximize.png" />
-        <img src="img/close.png" />
-      </div>
-    </div>
-    <div class="content music-content">
-      <p>🎵 현재 재생 중: <strong>My 노래</strong></p>
-      <img src="img/lp.png" alt="LP 디스크" class="lp" />
-      <!-- <audio src="audio/your-song.mp3" controls loop></audio> -->
+      <p>여기에 300자 정도의 텍스트가 들어갈 수 있습니다. 원하는 대로 언제든지 수정할것입림니</p>
     </div>
   </div>
 
