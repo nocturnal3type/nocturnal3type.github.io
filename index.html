@@ -10,9 +10,8 @@
 
 <div class="container">
 
-  <!-- 윗 창들 -->
+  <!-- 🔵 상단 버튼들 (오억년, 초밥이, 음악) -->
   <div class="mini-windows">
-    <!-- 오억년 -->
     <div class="mini-window">
       <div class="mini-title-bar">오억년버튼</div>
       <div class="mini-content">
@@ -20,7 +19,6 @@
       </div>
     </div>
 
-    <!-- 초밥이 -->
     <div class="mini-window">
       <div class="mini-title-bar">초밥이에게 초밥을 먹여주기</div>
       <div class="mini-content">
@@ -28,17 +26,16 @@
       </div>
     </div>
 
-    <!-- 음악 -->
-    <div class="music-window">
-      <div class="music-title-bar">음악</div>
-      <div class="music-content">
-        <img src="img/lp.png" alt="LP 디스크" />
-        <p><strong>My 노래</strong></p>
+    <div class="mini-window music">
+      <div class="mini-title-bar">음악</div>
+      <div class="mini-content">
+        <img src="img/lp.png" alt="LP 디스크" class="lp" />
+        <span>My 노래</span>
       </div>
     </div>
   </div>
 
-  <!-- 캐릭터 창 -->
+  <!-- 🧭 캐릭터 창 -->
   <div class="window">
     <div class="title-bar">
       <div class="window-title">초밥이</div>
@@ -50,36 +47,41 @@
     </div>
     <div class="content">
       <div class="left-panel">
-        <!-- 9개 캐릭터 박스 -->
-        <div class="character" data-index="0" data-name="캐릭터 1" data-desc="설명불가 님이 알아서 찾아보세요">
+        <!-- 캐릭터 9명 -->
+        <div class="character" data-name="캐릭터 1" data-desc="설명불가 님이알아서찾아보세요" data-index="0">
           <img src="img/char1.jpg" />
         </div>
-        <div class="character" data-index="1" data-name="캐릭터 2" data-desc="하하하">
+        <div class="character" data-name="캐릭터 2" data-desc="하하하" data-index="1">
           <img src="img/char2.jpg" />
         </div>
-        <div class="character" data-index="2" data-name="캐릭터 3" data-desc="허허허">
+        <div class="character" data-name="캐릭터 3" data-desc="허허허" data-index="2">
           <img src="img/char3.jpg" />
         </div>
-        <div class="character" data-index="3" data-name="캐릭터 4" data-desc="호호호">
+        <div class="character" data-name="캐릭터 4" data-desc="호호호" data-index="3">
           <img src="img/char4.jpg" />
         </div>
-        <div class="character" data-index="4" data-name="캐릭터 5" data-desc="으아악">
+        <div class="character" data-name="캐릭터 5" data-desc="으아악" data-index="4">
           <img src="img/char5.jpg" />
         </div>
-        <div class="character" data-index="5" data-name="캐릭터 6" data-desc="엉엉.">
+        <div class="character" data-name="캐릭터 6" data-desc="엉엉." data-index="5">
           <img src="img/char6.jpg" />
         </div>
-        <div class="character" data-index="6" data-name="캐릭터 7" data-desc="메롱.">
+        <div class="character" data-name="캐릭터 7" data-desc="메롱." data-index="6">
           <img src="img/char7.jpg" />
         </div>
-        <div class="character" data-index="7" data-name="캐릭터 8" data-desc="삐약삐약">
+        <div class="character" data-name="캐릭터 8" data-desc="삐약삐약" data-index="7">
           <img src="img/char8.jpg" />
         </div>
-        <div class="character" data-index="8" data-name="캐릭터 9" data-desc="이쒸">
+        <div class="character" data-name="캐릭터 9" data-desc="이쒸" data-index="8">
           <img src="img/char9.jpg" />
         </div>
       </div>
-      <div class="right-panel" id="info-panel">
+
+      <!-- 설명 패널 (기본 설명 포함 data-속성 추가됨) -->
+      <div class="right-panel" id="info-panel"
+           data-default-title="초밥이"
+           data-default-desc1="안녕하세요? 왜 안녕하신가요? 부럽습니다."
+           data-default-desc2="이쪽은 제 여자친구들입니다. 캐릭터 누르면 설명 뜹니다. 아니? 캐릭터 아닙니다. 엄연한 제 가족들입니다.">
         <h2>초밥이</h2>
         <p>안녕하세요? 왜 안녕하신가요? 부럽습니다.</p>
         <p>이쪽은 제 여자친구들입니다. 캐릭터 누르면 설명 뜹니다. 아니? 캐릭터 아닙니다. 엄연한 제 가족들입니다.</p>
@@ -87,7 +89,7 @@
     </div>
   </div>
 
-  <!-- 메모장 -->
+  <!-- 📘 메모장 창 -->
   <div class="window">
     <div class="title-bar">
       <div class="window-title">메모장</div>
