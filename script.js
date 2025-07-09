@@ -65,13 +65,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const windowTitle = document.querySelector(".window .title-bar");
     windowTitle.style.backgroundColor = "navy";
   }
-
+  
+/*
   // 드래그 가능하게 만드는 함수
   document.querySelectorAll(".drag-handle").forEach((handle) => {
     const windowEl = handle.closest(".window") || handle.closest(".mini-window");
     makeDraggable(windowEl, handle);
   });
 });
+
+*/
+
+//makeDraggable() 함수도 주석처리 할게
+  
+/*
 
 function makeDraggable(element, handle) {
   let offsetX = 0,
@@ -123,3 +130,4 @@ function makeDraggable(element, handle) {
     isDragging = false;
   });
 }
+*/
