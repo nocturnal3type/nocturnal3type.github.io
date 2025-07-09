@@ -66,29 +66,43 @@ body {
   background-color: #d0d0d0;
 }
 
-.music-window {
-  width: 240px; /* 오억년버튼과 같은 폭 */
+.music-full-window {
+  width: 800px; /* 초밥이 창과 동일한 너비 */
+  height: 40px; /* 버튼들과 높이 맞춤 */
   background-color: #c0c0c0;
   border: 2px solid #999;
   box-shadow: 2px 2px 4px #333;
+  display: flex;
+  flex-direction: column;
   user-select: none;
 }
 
-.music-content {
+.music-full-window .mini-title-bar {
+  background-color: navy;
+  color: white;
+  padding: 6px 10px;
+  font-weight: bold;
+  height: 100%;
   display: flex;
   align-items: center;
-  padding: 10px;
-  height: 60px;
+}
+
+.mini-music-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px;
   background-color: white;
   color: black;
   font-size: 13px;
+  height: 100%;
 }
 
 .lp {
-  width: 30px;
-  height: 30px;
-  margin-right: 10px;
+  width: 24px;
+  height: 24px;
 }
+
 /* ------------------------------
    📦 메인 창 (캐릭터)
 ------------------------------ */
