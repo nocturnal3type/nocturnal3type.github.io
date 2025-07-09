@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+
 /*
   // 드래그 가능하게 만드는 함수
   document.querySelectorAll(".drag-handle").forEach((handle) => {
