@@ -14,7 +14,7 @@ body {
   margin: 0;
   font-family: 'Courier New', Courier, monospace;
   color: white;
-  cursor: url('https://cur.cursors-4u.net/cursors/cur-2/cur117.cur'), auto;
+  cursor: url('img/cursor.png') 0 0, auto;
 }
 
 .container {
@@ -89,7 +89,7 @@ body {
   color: white;
   padding: 6px 10px;
   font-weight: bold;
-  cursor: move;
+  /* cursor: move; */
 }
 
 .window-title {
