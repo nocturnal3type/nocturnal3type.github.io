@@ -5,35 +5,27 @@
 document.addEventListener("DOMContentLoaded", function () {
   const characters = document.querySelectorAll(".character");
   const infoPanel = document.getElementById("info-panel");
-  const characterInfos = [
-    "캐릭터 1: 설명불가 님이알아서찾아보세요",
-    "캐릭터 2: 하하하",
-    "캐릭터 3: 허허허",
-    "캐릭터 4: 호호호",
-    "캐릭터 5: 으아악",
-    "캐릭터 6: 엉엉.",
-    "캐릭터 7: 메롱.",
-    "캐릭터 8: 삐약삐약",
-    "캐릭터 9: 이쒸"
-  ];
 
-  characters.forEach((character, index) => {
+  characters.forEach((character) => {
     character.addEventListener("click", () => {
+      const name = character.dataset.name;
+      const desc = character.dataset.desc;
+      const index = character.dataset.index;
+
       const content = document.createElement("div");
-      content.innerHTML = `<h3>🎀 ${characterInfos[index].split(":")[0]}</h3>
-        <p>${characterInfos[index].split(":")[1]}</p>`;
+      content.innerHTML = `<h3>🎀 ${name}</h3><p>${desc}</p>`;
 
       const backButton = document.createElement("button");
       backButton.textContent = "← 돌아가기";
       backButton.classList.add("back-button");
 
-      if (index === 4) {
+      if (index === "4") {
         // 캐릭터 5: 이스터에그
         let step = 0;
         backButton.addEventListener("click", () => {
           if (step === 0) {
             content.innerHTML = `<h3>🎉 이스터에그 발견!</h3>
-              <p>축하합니다! <strong>캐릭터 5</strong>의 돌아가기 버튼을 눌러 이스터에그를 발견하셨어요!</p>
+              <p>축하합니다! <strong>${name}</strong>의 돌아가기 버튼을 눌러 이스터에그를 발견하셨어요!</p>
               <p>한 번 더 누르면 진짜 돌아갑니다 :)</p>`;
             content.appendChild(backButton);
             step = 1;
@@ -49,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
       infoPanel.innerHTML = "";
       infoPanel.appendChild(content);
 
-      // 색상 바꾸기
+      // 탭 헤더 색상 변경
       const windowTitle = document.querySelector(".window .title-bar");
       windowTitle.style.backgroundColor = `var(--rainbow-${index})`;
     });
@@ -65,6 +57,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const windowTitle = document.querySelector(".window .title-bar");
     windowTitle.style.backgroundColor = "navy";
   }
+});
+
   
 /*
   // 드래그 가능하게 만드는 함수
