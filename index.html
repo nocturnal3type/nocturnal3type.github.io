@@ -13,14 +13,14 @@
   <!-- 윗 창들 -->
   <div class="mini-windows">
     <div class="mini-window" id="drag1">
-      <div class="mini-title-bar drag-handle">오억년버튼</div>
+      <div class="mini-title-bar">오억년버튼</div>
       <div class="mini-content">
         <button class="mini-button">누르기</button>
       </div>
     </div>
 
     <div class="mini-window" id="drag2">
-      <div class="mini-title-bar drag-handle">초밥이에게 초밥을 먹여주기</div>
+      <div class="mini-title-bar">초밥이에게 초밥을 먹여주기</div>
       <div class="mini-content">
         <button class="mini-button">🍣 줘보기</button>
       </div>
@@ -29,7 +29,7 @@
 
   <!-- 캐릭터 창 -->
   <div class="window" id="mainWindow">
-    <div class="title-bar drag-handle" id="mainTitleBar">
+    <div class="title-bar">
       <div class="window-title">초밥이</div>
       <div class="window-buttons">
         <img src="img/minimize.png" />
@@ -39,28 +39,51 @@
     </div>
     <div class="content">
       <div class="left-panel">
-        <!-- 9개 캐릭터 박스 -->
-        <script>
-          for (let i = 0; i < 9; i++) {
-            document.write(`
-              <div class="character" onclick="showCharacterInfo(${i})">
-                <img src="img/char${i + 1}.jpg" />
-              </div>
-            `);
-          }
-        </script>
+        <!-- 캐릭터 9개 -->
+        <div class="character" data-name="캐릭터 1" data-desc="설명불가 님이 알아서 찾아보세요" data-index="0">
+          <img src="img/char1.jpg" />
+        </div>
+        <div class="character" data-name="캐릭터 2" data-desc="하하하" data-index="1">
+          <img src="img/char2.jpg" />
+        </div>
+        <div class="character" data-name="캐릭터 3" data-desc="허허허" data-index="2">
+          <img src="img/char3.jpg" />
+        </div>
+        <div class="character" data-name="캐릭터 4" data-desc="호호호" data-index="3">
+          <img src="img/char4.jpg" />
+        </div>
+        <div class="character" data-name="캐릭터 5" data-desc="으아악" data-index="4">
+          <img src="img/char5.jpg" />
+        </div>
+        <div class="character" data-name="캐릭터 6" data-desc="엉엉." data-index="5">
+          <img src="img/char6.jpg" />
+        </div>
+        <div class="character" data-name="캐릭터 7" data-desc="메롱." data-index="6">
+          <img src="img/char7.jpg" />
+        </div>
+        <div class="character" data-name="캐릭터 8" data-desc="삐약삐약" data-index="7">
+          <img src="img/char8.jpg" />
+        </div>
+        <div class="character" data-name="캐릭터 9" data-desc="이쒸" data-index="8">
+          <img src="img/char9.jpg" />
+        </div>
       </div>
-      <div class="right-panel" id="info-panel">
+
+      <!-- 오른쪽 설명창 -->
+      <div class="right-panel" id="info-panel"
+           data-title="초밥이"
+           data-line1="안녕하세요? 왜 안녕하신가요? 부럽습니다."
+           data-line2="이쪽은 제 여자친구들입니다. 캐릭터 누르면 설명 뜹니다. 아니? 캐릭터 아닙니다. 엄연한 제 가족들입니다.">
         <h2>초밥이</h2>
         <p>안녕하세요? 왜 안녕하신가요? 부럽습니다.</p>
-        <p>이쪽은... 에휴 코드 이상해져서 걍 화남 이제.</p>
+        <p>이쪽은 제 여자친구들입니다. 캐릭터 누르면 설명 뜹니다. 아니? 캐릭터 아닙니다. 엄연한 제 가족들입니다.</p>
       </div>
     </div>
   </div>
 
   <!-- 메모장 창 -->
   <div class="window">
-    <div class="title-bar drag-handle">
+    <div class="title-bar">
       <div class="window-title">메모장</div>
       <div class="window-buttons">
         <img src="img/minimize.png" />
@@ -70,13 +93,13 @@
     </div>
     <div class="content note-content">
       <p>안녕하세요</p>
-      <p>여기에 300자 정도의 텍스트가 들어갈 수 있습니다. 원하는 대로 언제든지 수정할것입림니</p>
+      <p>여기에 300자 정도의 텍스트가 들어갈 수 있습니다. 원하는 대로 언제든지 수정할 수 있습니다.</p>
     </div>
   </div>
 
   <!-- 음악 창 -->
   <div class="window">
-    <div class="title-bar drag-handle">
+    <div class="title-bar">
       <div class="window-title">음악</div>
       <div class="window-buttons">
         <img src="img/minimize.png" />
