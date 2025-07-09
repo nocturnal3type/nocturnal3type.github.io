@@ -1,7 +1,11 @@
-/* ⭐ 전체 초기화 */
+/* ⭐ 기본 초기화 */
 * {
   box-sizing: border-box;
 }
+
+/* ------------------------------ */
+/* ✅ 전체 스타일 */
+/* ------------------------------ */
 
 body {
   background-color: black;
@@ -12,17 +16,17 @@ body {
 }
 
 .container {
-  width: 90%;
-  max-width: 1000px;
+  width: 800px;
   margin: 20px auto;
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-/* ------------------------------
-   🎛️ 상단 미니 윈도우들
------------------------------- */
+/* ------------------------------ */
+/* 🎛️ 상단 버튼 창 */
+/* ------------------------------ */
+
 .mini-windows {
   display: flex;
   gap: 10px;
@@ -31,8 +35,6 @@ body {
 
 .mini-window {
   width: 240px;
-  min-width: 240px;
-  max-width: 240px;
   background-color: #c0c0c0;
   border: 2px solid #999;
   box-shadow: 2px 2px 4px #333;
@@ -45,7 +47,6 @@ body {
   color: white;
   padding: 6px 10px;
   font-weight: bold;
-  cursor: default;
 }
 
 .mini-content {
@@ -64,27 +65,17 @@ body {
   background-color: #d0d0d0;
 }
 
-/* ------------------------------
-   🎵 음악창 (정렬 맞춤용)
------------------------------- */
-.music-fix {
-  width: 320px;
-  min-width: 320px;
-  max-width: 320px;
-  background-color: #c0c0c0;
-  border: 2px solid #999;
-  box-shadow: 2px 2px 4px #333;
+/* 🎵 음악창만 스타일 다르게 */
+.mini-window.music {
+  width: 300px;
 }
 
-.mini-music-content {
+.music-content {
   display: flex;
   align-items: center;
   gap: 10px;
-  background-color: white;
-  color: black;
+  height: 40px;
   padding: 6px 10px;
-  font-size: 13px;
-  height: 100%;
 }
 
 .lp {
@@ -92,51 +83,36 @@ body {
   height: 24px;
 }
 
-/* ------------------------------
-   📦 큰 창들 (초밥이, 메모장 등)
------------------------------- */
+/* ------------------------------ */
+/* 📦 공통 창 스타일 */
+/* ------------------------------ */
+
 .window {
   width: 800px;
-  margin: 20px auto;
+  max-width: 800px;
+  min-width: 800px;
+  margin: 0 auto;
   border: 2px solid #999;
   background-color: #c0c0c0;
   box-shadow: 0 0 10px #444;
 }
 
 .title-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background-color: navy;
   color: white;
   padding: 6px 10px;
   font-weight: bold;
-  cursor: default;
 }
 
-.window-title {
-  flex: 1;
-}
-
-.window-buttons img {
-  width: 14px;
-  height: 14px;
-  margin-left: 4px;
-  background-color: white;
-  border: 1px solid black;
-}
-
-/* 🔲 창 내부 공통 레이아웃 */
 .content {
   display: flex;
   padding: 10px;
   gap: 10px;
   height: 330px;
+  box-sizing: border-box;
 }
 
-/* ------------------------------
-   👥 캐릭터창 왼쪽
------------------------------- */
+/* 캐릭터 박스 */
 .left-panel {
   width: 300px;
   display: grid;
@@ -163,7 +139,7 @@ body {
   outline: 2px solid navy;
 }
 
-/* 📜 캐릭터 설명창 */
+/* 캐릭터 설명칸 */
 .right-panel {
   flex: 1;
   background-color: #fff;
@@ -174,6 +150,14 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+/* 메모장 */
+.note-content {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  font-size: 14px;
 }
 
 .back-button {
@@ -189,17 +173,7 @@ body {
   background-color: #a0a0a0;
 }
 
-/* ------------------------------
-   📒 메모장
------------------------------- */
-.note-content {
-  background-color: white;
-  color: black;
-  padding: 10px;
-  font-size: 14px;
-}
-
-/* 🌈 컬러 팔레트 */
+/* 색상 팔레트 */
 :root {
   --rainbow-0: red;
   --rainbow-1: orange;
