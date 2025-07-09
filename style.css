@@ -1,4 +1,7 @@
-/* ⭐ 기본 설정 */
+/* ------------------------------ */
+/* ✅ 전체 CSS 수정 (style.css)   */
+/* ------------------------------ */
+
 * {
   box-sizing: border-box;
 }
@@ -11,23 +14,23 @@ body {
   cursor: url('img/cursor.png'), auto;
 }
 
-/* 📦 전체 컨테이너 */
 .container {
   width: 90%;
   max-width: 1000px;
   margin: 20px auto;
   display: flex;
   flex-direction: column;
-  gap: 10px; /* 줄였음 */
+  gap: 10px;
 }
 
 /* ------------------------------
-   🎛️ 상단 더미 버튼 창
+   🎛️ 상단 버튼창
 ------------------------------ */
 .mini-windows {
   display: flex;
   gap: 10px;
   justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .mini-window {
@@ -44,6 +47,7 @@ body {
   color: white;
   padding: 6px 10px;
   font-weight: bold;
+  cursor: default;
 }
 
 .mini-content {
@@ -62,48 +66,25 @@ body {
   background-color: #d0d0d0;
 }
 
-/* ------------------------------
-   🎵 음악창 (미니창)
------------------------------- */
-.music-window {
-  width: 300px;
-  height: 80px;
-  background-color: #c0c0c0;
-  border: 2px solid #999;
-  box-shadow: 2px 2px 4px #333;
-  user-select: none;
-  position: relative;
-}
-
-.music-title-bar {
-  background-color: navy;
-  color: white;
-  padding: 6px 10px;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-.music-content {
+/* 음악 칸 별도 스타일 */
+.music .mini-content {
   display: flex;
   align-items: center;
   gap: 10px;
+  height: 40px; /* 버튼과 높이 맞춤 */
   padding: 6px 10px;
-  font-size: 13px;
-  color: black;
 }
 
-.music-content img {
-  width: 32px;
-  height: 32px;
-  object-fit: cover;
+.lp {
+  width: 24px;
+  height: 24px;
 }
 
 /* ------------------------------
-   🪟 기본 창 (캐릭터/메모장)
+   📦 메인 창 (캐릭터)
 ------------------------------ */
 .window {
-  width: 800px;
-  margin: 0 auto;
+  width: 100%;
   border: 2px solid #999;
   background-color: #c0c0c0;
   box-shadow: 0 0 10px #444;
@@ -138,7 +119,6 @@ body {
   height: 330px;
 }
 
-/* 👤 왼쪽 캐릭터 패널 */
 .left-panel {
   width: 300px;
   display: grid;
@@ -165,28 +145,26 @@ body {
   outline: 2px solid navy;
 }
 
-/* 👩‍🏫 오른쪽 설명창 */
 .right-panel {
   flex: 1;
   background-color: #fff;
   color: #000;
   padding: 10px;
   border: 2px inset #999;
-  min-height: 310px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-/* 📝 메모장 */
+/* 메모장 & 음악 */
 .note-content {
   background-color: white;
   color: black;
   padding: 10px;
   font-size: 14px;
+  min-height: 100px;
 }
 
-/* 🔙 돌아가기 버튼 */
 .back-button {
   margin-top: 10px;
   padding: 6px 10px;
@@ -200,7 +178,7 @@ body {
   background-color: #a0a0a0;
 }
 
-/* 🌈 색상 지정용 */
+/* 색상 변수 */
 :root {
   --rainbow-0: red;
   --rainbow-1: orange;
