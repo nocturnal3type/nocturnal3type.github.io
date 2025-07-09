@@ -75,52 +75,51 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function makeDraggable(element, handle) {
   let offsetX = 0,
-    offsetY = 0,
-    isDragging = false,
-    moved = false;
+      offsetY = 0,
+      isDragging = false,
+      moved = false;
 
   handle.addEventListener("mousedown", function (e) {
-    isDragging = true;
-    moved = false;
     const rect = element.getBoundingClientRect();
     offsetX = e.clientX - rect.left;
     offsetY = e.clientY - rect.top;
 
-    // 여기서 position 설정 ❌
-    // element.style.position = "absolute";
-    // element.style.zIndex = 1000;
+    // 드래그 시작 표시
+    isDragging = true;
+    moved = false;
+
+    // 마우스 포인터 캡처 (prevent text highlight)
+    e.preventDefault();
   });
 
   document.addEventListener("mousemove", function (e) {
     if (!isDragging) return;
 
-
     if (!moved) {
-      // 진짜 움직이기 시작했을 때만 position 설정
-      const rect = element.getBoundingClientRect();
-      element.style.position = "absolute";
-      element.style.left = rect.left + "px";
-      element.style.top = rect.top + "px";
-      element.style.width = rect.width + "px";
-      element.style.height = rect.height + "px";
+      // 처음 움직일 때만 position 변경
+      element.style.position = "fixed"; // viewport 기준으로
+      element.style.margin = 0;
+      element.style.left = element.getBoundingClientRect().left + "px";
+      element.style.top = element.getBoundingClientRect().top + "px";
+      element.style.zIndex = 1000;
       moved = true;
-    }  
-
-    const maxLeft = window.innerWidth - element.offsetWidth;
-    const maxTop = window.innerHeight - element.offsetHeight;
+    }
 
     let newLeft = e.clientX - offsetX;
     let newTop = e.clientY - offsetY;
 
+    // 화면 밖으로 못 나가게 clamp
+    const maxLeft = window.innerWidth - element.offsetWidth;
+    const maxTop = window.innerHeight - element.offsetHeight;
+
     newLeft = Math.max(0, Math.min(newLeft, maxLeft));
     newTop = Math.max(0, Math.min(newTop, maxTop));
 
-    element.style.left = newLeft + "px";
-    element.style.top = newTop + "px";
+    element.style.left = `${newLeft}px`;
+    element.style.top = `${newTop}px`;
   });
 
   document.addEventListener("mouseup", function () {
-    if (!isDragging) return;
     isDragging = false;
   });
 }
