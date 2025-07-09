@@ -2,6 +2,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const characters = document.querySelectorAll(".character");
   const infoPanel = document.getElementById("info-panel");
 
+  const defaultName = "초밥이";
+  const defaultDesc = `
+    <p>안녕하세요? 왜 안녕하신가요? 부럽습니다.</p>
+    <p>이쪽은 제 여자친구들입니다. 캐릭터 누르면 설명 뜹니다. 아니? 캐릭터 아닙니다. 엄연한 제 가족들입니다.</p>
+  `;
+
   characters.forEach((character) => {
     character.addEventListener("click", () => {
       const name = character.dataset.name;
@@ -16,7 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
       backButton.classList.add("back-button");
 
       if (index === "4") {
-        // 캐릭터 5: 이스터에그
         let step = 0;
         backButton.addEventListener("click", () => {
           if (step === 0) {
@@ -37,23 +42,13 @@ document.addEventListener("DOMContentLoaded", function () {
       infoPanel.innerHTML = "";
       infoPanel.appendChild(content);
 
-      // 색상 바꾸기
       const windowTitle = document.querySelector(".window .title-bar");
       windowTitle.style.backgroundColor = `var(--rainbow-${index})`;
     });
   });
 
   function resetInfoPanel() {
-    const defaultTitle = infoPanel.dataset.defaultTitle || "초밥이";
-    const defaultDesc1 = infoPanel.dataset.defaultDesc1 || "기본 설명";
-    const defaultDesc2 = infoPanel.dataset.defaultDesc2 || "";
-
-    infoPanel.innerHTML = `
-      <h2>${defaultTitle}</h2>
-      <p>${defaultDesc1}</p>
-      <p>${defaultDesc2}</p>
-    `;
-
+    infoPanel.innerHTML = `<h2>${defaultName}</h2>${defaultDesc}`;
     const windowTitle = document.querySelector(".window .title-bar");
     windowTitle.style.backgroundColor = "navy";
   }
