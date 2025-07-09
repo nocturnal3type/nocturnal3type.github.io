@@ -10,68 +10,63 @@
 
 <div class="container">
 
-  <!-- 상단 버튼 및 음악창 -->
+  <!-- 윗 창들 -->
   <div class="mini-windows">
-    <div class="mini-window" id="drag1">
-      <div class="mini-title-bar drag-handle">오억년버튼</div>
+    <div class="mini-window">
+      <div class="mini-title-bar">오억년버튼</div>
       <div class="mini-content">
         <button class="mini-button">누르기</button>
       </div>
     </div>
 
-    <div class="mini-window" id="drag2">
-      <div class="mini-title-bar drag-handle">초밥이에게 초밥을 먹여주기</div>
+    <div class="mini-window">
+      <div class="mini-title-bar">초밥이에게 초밥을 먹여주기</div>
       <div class="mini-content">
         <button class="mini-button">🍣 줘보기</button>
       </div>
     </div>
 
-    <!-- 🎵 음악창 -->
-    <div class="mini-window music-fix">
+    <div class="mini-window music">
       <div class="mini-title-bar">음악</div>
-      <div class="mini-music-content">
-        <img src="img/lp.png" alt="LP 디스크" class="lp" />
-        <p>🎵 현재 재생 중: <strong>My 노래</strong></p>
+      <div class="mini-content music-content">
+        <img src="img/lp.png" class="lp" />
+        <span>🎵 재생 중: <strong>My 노래</strong></span>
       </div>
     </div>
   </div>
 
-  <!-- 🧷 캐릭터 창 -->
-  <div class="window" id="mainWindow">
-    <div class="title-bar drag-handle" id="mainTitleBar">
-      <div class="window-title">초밥이</div>
-      <div class="window-buttons">
-        <img src="img/minimize.png" />
-        <img src="img/maximize.png" />
-        <img src="img/close.png" />
-      </div>
-    </div>
+  <!-- 캐릭터 창 -->
+  <div class="window">
+    <div class="title-bar">초밥이</div>
     <div class="content">
       <div class="left-panel">
-        <!-- 캐릭터 9개 -->
-        <script>
-          const characters = [
-            { name: "캐릭터 1", desc: "설명불가 님이알아서찾아보세요" },
-            { name: "캐릭터 2", desc: "하하하" },
-            { name: "캐릭터 3", desc: "허허허" },
-            { name: "캐릭터 4", desc: "호호호" },
-            { name: "캐릭터 5", desc: "으아악" },
-            { name: "캐릭터 6", desc: "엉엉." },
-            { name: "캐릭터 7", desc: "메롱." },
-            { name: "캐릭터 8", desc: "삐약삐약" },
-            { name: "캐릭터 9", desc: "이쒸" },
-          ];
-          characters.forEach((char, index) => {
-            document.write(`
-              <div class="character"
-                data-name="${char.name}"
-                data-desc="${char.desc}"
-                data-index="${index}">
-                <img src="img/char${index + 1}.jpg" />
-              </div>
-            `);
-          });
-        </script>
+        <div class="character" data-name="캐릭터 1" data-desc="설명불가 님이알아서찾아보세요" data-index="0">
+          <img src="img/char1.jpg" />
+        </div>
+        <div class="character" data-name="캐릭터 2" data-desc="하하하" data-index="1">
+          <img src="img/char2.jpg" />
+        </div>
+        <div class="character" data-name="캐릭터 3" data-desc="허허허" data-index="2">
+          <img src="img/char3.jpg" />
+        </div>
+        <div class="character" data-name="캐릭터 4" data-desc="호호호" data-index="3">
+          <img src="img/char4.jpg" />
+        </div>
+        <div class="character" data-name="캐릭터 5" data-desc="으아악" data-index="4">
+          <img src="img/char5.jpg" />
+        </div>
+        <div class="character" data-name="캐릭터 6" data-desc="엉엉." data-index="5">
+          <img src="img/char6.jpg" />
+        </div>
+        <div class="character" data-name="캐릭터 7" data-desc="메롱." data-index="6">
+          <img src="img/char7.jpg" />
+        </div>
+        <div class="character" data-name="캐릭터 8" data-desc="삐약삐약" data-index="7">
+          <img src="img/char8.jpg" />
+        </div>
+        <div class="character" data-name="캐릭터 9" data-desc="이쒸" data-index="8">
+          <img src="img/char9.jpg" />
+        </div>
       </div>
       <div class="right-panel" id="info-panel">
         <h2>초밥이</h2>
@@ -81,19 +76,12 @@
     </div>
   </div>
 
-  <!-- 📝 메모장 창 -->
+  <!-- 메모장 창 -->
   <div class="window">
-    <div class="title-bar drag-handle">
-      <div class="window-title">메모장</div>
-      <div class="window-buttons">
-        <img src="img/minimize.png" />
-        <img src="img/maximize.png" />
-        <img src="img/close.png" />
-      </div>
-    </div>
+    <div class="title-bar">메모장</div>
     <div class="content note-content">
       <p>안녕하세요</p>
-      <p>여기에 300자 정도의 텍스트가 들어갈 수 있습니다. 원하는 대로 언제든지 수정할 수 있습니다.</p>
+      <p>여기에 300자 정도의 텍스트가 들어갈 수 있습니다. 원하는 대로 언제든지 수정할것입림니</p>
     </div>
   </div>
 
