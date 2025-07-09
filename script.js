@@ -1,16 +1,12 @@
-// ------------------------------
-// ✅ script.js 전체 스크립트
-// ------------------------------
-
 document.addEventListener("DOMContentLoaded", function () {
   const characters = document.querySelectorAll(".character");
   const infoPanel = document.getElementById("info-panel");
 
   characters.forEach((character) => {
     character.addEventListener("click", () => {
-      const name = character.dataset.name;
-      const desc = character.dataset.desc;
-      const index = character.dataset.index;
+      const name = character.getAttribute("data-name");
+      const desc = character.getAttribute("data-desc");
+      const index = character.getAttribute("data-index");
 
       const content = document.createElement("div");
       content.innerHTML = `<h3>🎀 ${name}</h3><p>${desc}</p>`;
@@ -41,29 +37,21 @@ document.addEventListener("DOMContentLoaded", function () {
       infoPanel.innerHTML = "";
       infoPanel.appendChild(content);
 
-      // 탭 헤더 색상 변경
       const windowTitle = document.querySelector(".window .title-bar");
       windowTitle.style.backgroundColor = `var(--rainbow-${index})`;
     });
   });
 
   function resetInfoPanel() {
-  const panel = document.getElementById("info-panel");
-  const title = panel.dataset.title;
-  const line1 = panel.dataset.line1;
-  const line2 = panel.dataset.line2;
-
-  panel.innerHTML = `
-    <h2>${title}</h2>
-    <p>${line1}</p>
-    <p>${line2}</p>
-  `;
-
-  const windowTitle = document.querySelector(".window .title-bar");
-  windowTitle.style.backgroundColor = "navy";
- }
+    infoPanel.innerHTML = `
+      <h2>초밥이</h2>
+      <p>안녕하세요? 왜 안녕하신가요? 부럽습니다.</p>
+      <p>이쪽은 제 여자친구들입니다. 캐릭터 누르면 설명 뜹니다. 아니? 캐릭터 아닙니다. 엄연한 제 가족들입니다.</p>
+    `;
+    const windowTitle = document.querySelector(".window .title-bar");
+    windowTitle.style.backgroundColor = "navy";
+  }
 });
-
   
 /*
   // 드래그 가능하게 만드는 함수
