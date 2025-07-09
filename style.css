@@ -66,20 +66,29 @@ body {
   background-color: #d0d0d0;
 }
 
-/* 음악 칸 별도 스타일 */
-.music .mini-content {
+.music-window {
+  width: 240px; /* 오억년버튼과 같은 폭 */
+  background-color: #c0c0c0;
+  border: 2px solid #999;
+  box-shadow: 2px 2px 4px #333;
+  user-select: none;
+}
+
+.music-content {
   display: flex;
   align-items: center;
-  gap: 10px;
-  height: 40px; /* 버튼과 높이 맞춤 */
-  padding: 6px 10px;
+  padding: 10px;
+  height: 60px;
+  background-color: white;
+  color: black;
+  font-size: 13px;
 }
 
 .lp {
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
 }
-
 /* ------------------------------
    📦 메인 창 (캐릭터)
 ------------------------------ */
