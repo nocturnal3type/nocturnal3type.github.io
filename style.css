@@ -197,3 +197,11 @@ body {
   --rainbow-7: pink;
   --rainbow-8: cyan;
 }
+
+
+.window,
+.mini-window {
+  position: relative !important;
+  z-index: 10 !important;
+}
+
