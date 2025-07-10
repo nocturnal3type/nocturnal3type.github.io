@@ -12,32 +12,31 @@
 
   <!-- 윗 창들 -->
   <div class="mini-windows">
-    <div class="mini-window">
+    <div class="mini-window" id="drag1">
       <div class="mini-title-bar">오억년버튼</div>
       <div class="mini-content">
         <button class="mini-button">누르기</button>
       </div>
     </div>
 
-    <div class="mini-window">
+    <div class="mini-window" id="drag2">
       <div class="mini-title-bar">초밥이에게 초밥을 먹여주기</div>
       <div class="mini-content">
         <button class="mini-button">🍣 줘보기</button>
-      </div>
-    </div>
-
-    <div class="mini-window music">
-      <div class="mini-title-bar">음악</div>
-      <div class="mini-content music-content">
-        <img src="img/lp.png" class="lp" />
-        <span>🎵 재생 중: <strong>My 노래</strong></span>
       </div>
     </div>
   </div>
 
   <!-- 캐릭터 창 -->
   <div class="window">
-    <div class="title-bar">초밥이</div>
+    <div class="title-bar">
+      <div class="window-title">초밥이</div>
+      <div class="window-buttons">
+        <img src="img/minimize.png" />
+        <img src="img/maximize.png" />
+        <img src="img/close.png" />
+      </div>
+    </div>
     <div class="content">
       <div class="left-panel">
         <div class="character" data-name="캐릭터 1" data-desc="설명불가 님이알아서찾아보세요" data-index="0">
@@ -69,19 +68,42 @@
         </div>
       </div>
       <div class="right-panel" id="info-panel">
-        <h2>초밥이</h2>
+        <h2>초밥</h2>
         <p>안녕하세요? 왜 안녕하신가요? 부럽습니다.</p>
-        <p>이쪽은 제 여자친구들입니다. 캐릭터 누르면 설명 뜹니다. 아니? 캐릭터 아닙니다. 엄연한 제 가족들입니다.</p>
+        <p>캐릭터 누르면 설명 뜹니다. 아니? 캐릭터 아닙니다. 엄연한 제 가족들입니다.</p>
       </div>
     </div>
   </div>
 
   <!-- 메모장 창 -->
   <div class="window">
-    <div class="title-bar">메모장</div>
+    <div class="title-bar">
+      <div class="window-title">메모장</div>
+      <div class="window-buttons">
+        <img src="img/minimize.png" />
+        <img src="img/maximize.png" />
+        <img src="img/close.png" />
+      </div>
+    </div>
     <div class="content note-content">
       <p>안녕하세요</p>
-      <p>여기에 300자 정도의 텍스트가 들어갈 수 있습니다. 원하는 대로 언제든지 수정할것입림니</p>
+      <p>공지가 뜹니다. 생긴다면....</p>
+    </div>
+  </div>
+
+  <!-- 음악 창 -->
+  <div class="window">
+    <div class="title-bar">
+      <div class="window-title">PLAY: Space Cowboy - Jamiroquai</div>
+      <div class="window-buttons">
+        <img src="img/minimize.png" />
+        <img src="img/maximize.png" />
+        <img src="img/close.png" />
+      </div>
+    </div>
+    <div class="content music-content">
+      <button class="mini-button" onclick="playMusic()">🎵 PLAY</button>
+      <audio id="bgm" src="audio/bgm.mp3" loop></audio>
     </div>
   </div>
 
@@ -90,3 +112,4 @@
 <script src="script.js"></script>
 </body>
 </html>
+
