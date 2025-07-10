@@ -4,8 +4,8 @@
 }
 
 body {
-  background: url("img/background.jpg") no-repeat center center fixed;
-  background-size: cover;
+  background: black url("img/background.jpg") no-repeat center center fixed;
+  background-size: contain; /* ✅ 비율 유지하며 최대 크기로 */
   margin: 0;
   font-family: 'Courier New', Courier, monospace;
   color: white;
