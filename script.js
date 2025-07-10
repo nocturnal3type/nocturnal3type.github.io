@@ -2,10 +2,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const characters = document.querySelectorAll(".character");
   const infoPanel = document.getElementById("info-panel");
 
-  const defaultName = "초밥이";
+  const defaultName = "초밥";
   const defaultDesc = `
-    <p>안녕하세요? 왜 안녕하신가요? 부럽습니다.</p>
-    <p>이쪽은 제 여자친구들입니다. 캐릭터 누르면 설명 뜹니다. 아니? 캐릭터 아닙니다. 엄연한 제 가족들입니다.</p>
+    <p>HELLO WORLD</p>
+    <p>PRESS TO START</p>
   `;
 
   characters.forEach((character) => {
@@ -54,6 +54,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+function playMusic() {
+  const bgm = document.getElementById("bgm");
+  bgm.play();
+}
 
 /*
   // 드래그 가능하게 만드는 함수
