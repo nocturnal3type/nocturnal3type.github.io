@@ -55,10 +55,19 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function playMusic() {
-  const bgm = document.getElementById("bgm");
-  bgm.play();
-}
+  const existing = document.getElementById("bgm-audio");
+  if (existing) {
+    existing.play();
+    return;
+  }
 
+  const audio = document.createElement("audio");
+  audio.src = "audio/bgm.mp3";
+  audio.id = "bgm-audio";
+  audio.autoplay = true;
+  audio.loop = true;
+  document.body.appendChild(audio);
+}
 /*
   // 드래그 가능하게 만드는 함수
   document.querySelectorAll(".drag-handle").forEach((handle) => {
