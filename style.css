@@ -34,6 +34,13 @@ body {
   box-shadow: 2px 2px 4px #333;
 }
 
+.mini-window.music {
+  width: 300px;
+  background-color: #c0c0c0;
+  border: 2px solid #999;
+  box-shadow: 2px 2px 4px #333;
+}
+
 .mini-title-bar {
   background-color: navy;
   color: white;
