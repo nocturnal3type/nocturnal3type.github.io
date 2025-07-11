@@ -149,8 +149,12 @@ body {
 /* 설명창 제목 간격 줄이기 */
 #info-panel h2 {
   margin-top: 0;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   padding: 0;
+}
+
+#info-panel p {
+  margin-top: 4px; /* 원래는 보통 16px~20px 정도 */
 }
 /* ------------------------------
    📝 메모장 & 🎵 음악칸 내용
