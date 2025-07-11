@@ -25,9 +25,9 @@ document.addEventListener("DOMContentLoaded", function () {
         let step = 0;
         backButton.addEventListener("click", () => {
           if (step === 0) {
-            content.innerHTML = `<h3>🎉 이스터에그 발견!</h3>
-              <p>축하합니다! <strong>${name}</strong>의 돌아가기 버튼을 눌러 이스터에그를 발견하셨어요!</p>
-              <p>한 번 더 누르면 진짜 돌아갑니다 :)</p>`;
+            content.innerHTML = `<h3>🎉 이스터에그 발견 🎉</h3>
+              <p>축하합니다~ <strong>${name}</strong>의 돌아가기 버튼을 누르셨네요. 본 메시지는 이스터에그입니다.</p>
+              <p>한 번 더 누르면 진짜 돌아갑니다. 쓸데없지만 님은 이스터에그를 발견한 특별한 사람이 됨...</p>`;
             content.appendChild(backButton);
             step = 1;
           } else {
