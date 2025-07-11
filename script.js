@@ -2,9 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const characters = document.querySelectorAll(".character");
   const infoPanel = document.getElementById("info-panel");
 
-  const defaultName = "먼지라 불리운 사나이 (초밥이라고 부르셔도 됩니다.)";
+  const defaultName = "안녕하세요? 왜 안녕하시죠?";
   const defaultDesc = `
-    <h2>안녕하세요? 왜 안녕하시죠?</h2>
     <p>아주 먼 옛날, 은하계 저 너머에서는, 트위터... 아... 일론강점기에 그렇게 불리지는 않지만요. 
     아무튼 트위터 오타쿠들은 '자기소개표'라는 이미지 템플릿에 자기 관심사와 주의사항을 적어놓는 풍습이 있었다고 합니다. 
     <br>이 웹사이트는 어찌보면 자기소개표의 '깃허브로 실시간 수정이 가능한 버전'이랄까요. 캐릭터 사진을 누르시면 저에 대해 더 잘 알게 되시지 않을까요. 랄까...</p>
