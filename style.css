@@ -134,6 +134,7 @@ body {
 /* ------------------------------
    📖 캐릭터 설명 오른쪽 패널
 ------------------------------ */
+
 .right-panel {
   flex: 1;
   background-color: #fff;
@@ -143,7 +144,10 @@ body {
   min-height: 310px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+
+  /* ✅ 간격 과다 문제 해결 */
+  justify-content: flex-start; 
+  gap: 8px;  /* 또는 네가 원하는 만큼 */
 }
 
 /* 설명창 제목 간격 줄이기 */
