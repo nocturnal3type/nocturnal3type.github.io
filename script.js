@@ -12,6 +12,18 @@ document.addEventListener("DOMContentLoaded", function () {
     <br>이 웹사이트는 어찌보면 자기소개표의 '깃허브로 실시간 수정이 가능한 버전'이랄까요. 캐릭터 사진을 누르시면 저에 대해 더 잘 알게 되시지 않을까요. 랄까...</p>
   `;
 
+  const sushiButton = document.querySelector("#drag2 .mini-button");
+  const feedbackWindow = document.getElementById("sushi-feedback");
+
+  sushiButton.addEventListener("click", () => {
+    feedbackWindow.style.display = "block";
+
+    // 자동으로 5초 뒤에 닫기
+    setTimeout(() => {
+      feedbackWindow.style.display = "none";
+    }, 5000);
+  });
+
   characters.forEach((character) => {
     character.addEventListener("click", () => {
       const name = character.dataset.name;
@@ -58,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// 🎵 음악 재생 함수는 외부에 위치해도 OK
 function playMusic() {
   const existing = document.getElementById("bgm-audio");
   if (existing) {
@@ -72,6 +85,7 @@ function playMusic() {
   audio.loop = true;
   document.body.appendChild(audio);
 }
+
 /*
   // 드래그 가능하게 만드는 함수
   document.querySelectorAll(".drag-handle").forEach((handle) => {
