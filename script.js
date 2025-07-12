@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const index = character.dataset.index;
 
       const content = document.createElement("div");
-      content.innerHTML = `<h3>🎀 ${name}</h3><p>${desc}</p>`;
+      content.innerHTML = `<h3>💾 ${name}</h3><p>${desc}</p>`;
 
       const backButton = document.createElement("button");
       backButton.textContent = "← 돌아가기";
