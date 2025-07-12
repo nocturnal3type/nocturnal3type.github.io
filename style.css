@@ -171,6 +171,37 @@ body {
 }
 
 /* ------------------------------
+ 🍣 초밥이 메시지 창 스타일 
+------------------------------ */
+
+.feedback-window {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 240px;       /* 오억년 버튼 창과 동일 */
+  height: 220px;      /* 캐릭터 창 높이 330px의 2/3 정도 */
+  background-color: #c0c0c0;
+  border: 2px solid #999;
+  box-shadow: 2px 2px 6px #333;
+  display: none;      /* 기본은 숨김 */
+  z-index: 1000;
+}
+
+.feedback-window .mini-title-bar {
+  background-color: navy;
+  color: white;
+  padding: 6px 10px;
+  font-weight: bold;
+  cursor: default;
+}
+
+.feedback-window .mini-content {
+  padding: 10px;
+  color: black;
+  font-size: 14px;
+}
+
+/* ------------------------------
    🎵 음악 버튼창 별도 스타일
 ------------------------------ */
 .mini-window.music {
